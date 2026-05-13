@@ -72,16 +72,32 @@ const projectsJson = JSON.stringify(
             tabindex="0"
             aria-label={`Abrir detalles de ${project.title}`}
           >
-            {(project as any).colorIcon && (
+            {((project as any).colorIcon || project.icon) && (
               <div class="float-icon-wrap" aria-hidden="true">
-                <img
-                  src={withBase((project as any).colorIcon)}
-                  alt=""
-                  class={`float-icon${(project as any).colorIcon.includes('githubusercontent') ? ' float-icon-mdi' : ''}`}
-                  loading="lazy"
-                  width="44"
-                  height="44"
-                />
+                {(project as any).colorIcon ? (
+                  <img
+                    src={withBase((project as any).colorIcon)}
+                    alt=""
+                    class={`float-icon${(project as any).colorIcon.includes('githubusercontent') ? ' float-icon-mdi' : ''}`}
+                    loading="lazy"
+                    width="44"
+                    height="44"
+                    onerror="this.style.display='none'; this.nextElementSibling?.classList.remove('is-hidden')"
+                  />
+                ) : (
+                  <span class="float-icon-placeholder"></span>
+                )}
+                {project.icon && icons[project.icon] && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class={`float-icon-svg${(project as any).colorIcon ? ' is-hidden' : ''}`}
+                    set:html={icons[project.icon]}
+                  />
+                )}
               </div>
             )}
 
@@ -503,6 +519,18 @@ const projectsJson = JSON.stringify(
     height: 100%;
     object-fit: contain;
     display: block;
+  }
+  .float-icon-svg {
+    width: 100%;
+    height: 100%;
+    color: var(--accent);
+    display: block;
+  }
+  .float-icon-svg.is-hidden {
+    display: none;
+  }
+  .float-icon-placeholder {
+    display: none;
   }
   .float-icon-mdi {
     filter: invert(1) brightness(0.85);

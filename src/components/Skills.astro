@@ -1,6 +1,23 @@
 ---
 import skillsData from '../data/skills.json';
 import { withBase } from '../lib/assetPath';
+
+const skillIconMap: Record<string, string> = {
+  'Artificial Intelligence (AI)': 'mdi:brain',
+  'Decision Intelligence': 'mdi:lightbulb-on-outline',
+  'Machine Learning': 'mdi:robot-outline',
+  'Intelligent Automation': 'mdi:cog-outline',
+  'Business Intelligence (BI)': 'mdi:chart-box-outline',
+  'Predictive Analytics': 'mdi:chart-timeline-variant',
+  'Power BI': 'simple-icons:powerbi',
+  'Data Strategy': 'mdi:sitemap-outline',
+  Python: 'mdi:language-python',
+  SQL: 'mdi:database-search-outline',
+  'Data Modeling': 'mdi:database-cog-outline',
+  'Business Process Optimization': 'mdi:cog-sync-outline',
+};
+
+const iconForSkill = (name: string) => skillIconMap[name] ?? 'mdi:star-four-points-circle-outline';
 ---
 
 <section id="skills" class="py-24" style="scroll-margin-top: 80px;">
@@ -32,6 +49,12 @@ import { withBase } from '../lib/assetPath';
                     loading="lazy"
                     width="36"
                     height="36"
+                    onerror="this.style.display='none'; this.nextElementSibling?.classList.remove('is-hidden')"
+                  />
+                  <iconify-icon
+                    icon={iconForSkill(skill.name)}
+                    class="skill-icon is-hidden"
+                    aria-hidden="true"
                   />
                   <span class="skill-name">{skill.name}</span>
                 </div>
@@ -101,12 +124,18 @@ import { withBase } from '../lib/assetPath';
     z-index: 1;
     width: 36px;
     height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     object-fit: contain;
     filter: brightness(0.85) saturate(0.8);
     transition: filter 0.2s ease;
   }
   .skill-item:hover .skill-icon {
     filter: brightness(1.1) saturate(1.2);
+  }
+  .skill-icon.is-hidden {
+    display: none;
   }
 
   .skill-name {

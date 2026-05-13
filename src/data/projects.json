@@ -23,5 +23,80 @@
     "link": "/projects/decisionos",
     "colorIcon": "/images/icons/materialdesign/brain.svg",
     "githubRepo": ""
+  },
+  {
+    "title": "Mantenimiento Predictivo AI",
+    "featured": true,
+    "resume": true,
+    "company": "Proyecto de IA industrial",
+    "category": "IA & BI",
+    "description": "Arquitectura de Predictive Maintenance impulsada por AI para anticipar fallas, reducir downtime y mejorar la confiabilidad operacional mediante Machine Learning y analytics industrial.",
+    "tags": [
+      "Predictive Maintenance",
+      "Industrial AI",
+      "Machine Learning",
+      "Anomaly Detection",
+      "Python",
+      "SQL",
+      "Power BI",
+      "Dashboard"
+    ],
+    "icon": "wrench-screwdriver",
+    "sliderImage": "/images/projects/web-app.jpg",
+    "sliderOrder": 2,
+    "backgroundImage": "/images/projects/web-app.jpg",
+    "link": "/projects/predictive-maintenance-ai",
+    "colorIcon": "/images/icons/materialdesign/cog-sync.svg",
+    "githubRepo": ""
+  },
+  {
+    "title": "Inteligencia de Gastos Corporativos",
+    "featured": true,
+    "resume": true,
+    "company": "Proyecto de auditoria financiera con AI",
+    "category": "IA & BI",
+    "description": "Plataforma inteligente de auditoria de gastos corporativos para detectar anomalias, mejorar la visibilidad financiera y fortalecer el control operacional con Analytics y AI.",
+    "tags": [
+      "AI Audit",
+      "Corporate Analytics",
+      "Anomaly Detection",
+      "Risk Scoring",
+      "Behavioral Analytics",
+      "Python",
+      "SQL",
+      "Power BI"
+    ],
+    "icon": "banknotes",
+    "sliderImage": "/images/projects/design-library.jpg",
+    "sliderOrder": 3,
+    "backgroundImage": "/images/projects/design-library.jpg",
+    "link": "/projects/corporate-expense-intelligence",
+    "colorIcon": "/images/icons/materialdesign/chart-box.svg",
+    "githubRepo": ""
+  },
+  {
+    "title": "Superstore 360",
+    "featured": true,
+    "resume": true,
+    "company": "Proyecto BI para retail",
+    "category": "IA & BI",
+    "description": "Solucion end-to-end de Business Intelligence para retail enfocada en KPI Analytics, Data Storytelling y Decision Support a nivel ejecutivo.",
+    "tags": [
+      "Business Intelligence",
+      "Retail Analytics",
+      "KPI Analytics",
+      "Data Modeling",
+      "Python",
+      "SQL",
+      "Power BI",
+      "Data Storytelling"
+    ],
+    "icon": "presentation-chart-line",
+    "sliderImage": "/images/projects/blender-mockup.jpg",
+    "sliderOrder": 4,
+    "backgroundImage": "/images/projects/blender-mockup.jpg",
+    "link": "/projects/superstore-360",
+    "colorIcon": "/images/icons/materialdesign/chart-timeline-variant.svg",
+    "githubRepo": ""
   }
 ]

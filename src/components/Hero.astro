@@ -13,8 +13,13 @@ import { icons } from '../lib/icons';
 import { withBase } from '../lib/assetPath';
 
 const augmented = await augmentProjectsWithImages(projectsData as ProjectEntry[]);
-// Only projects with a GitHub-fetched preview image appear in the hero slider.
-const featuredProjects = augmented.filter((p) => p.featuredImage);
+// Show a project in the slider when any project image is available.
+const featuredProjects = augmented
+  .filter((p) => Boolean(p.featuredImage || p.sliderImage || p.backgroundImage))
+  .map((p) => ({
+    ...p,
+    heroImage: p.featuredImage ?? p.sliderImage ?? p.backgroundImage ?? '',
+  }));
 // Split "Frontend & Backend" so the "&" can be styled with a different colour in the template.
 const heroParts = personalData.heroRole.split(' & ');
 ---
@@ -168,37 +173,43 @@ const heroParts = personalData.heroRole.split(' & ');
             <div class="pf-body">
               <div class="relative w-full h-full">
                 {
-                  featuredProjects.map((project, i) => (
-                    <div
-                      class="hero-slide absolute inset-0 flex items-center justify-center p-3 transition-[transform,opacity] duration-700 ease-in-out"
-                      data-index={i}
-                      data-project-index={projectsData.findIndex((p) => p.title === project.title)}
-                      style={
-                        i === 0
-                          ? 'transform:translateX(0);opacity:1;'
-                          : 'transform:translateX(100%);opacity:0;'
-                      }
-                    >
-                      <img
-                        src={withBase(project.featuredImage!)}
-                        alt={project.title}
-                        class="w-full h-full object-cover"
-                        loading="lazy"
-                        width="450"
-                        height="450"
-                      />
-                      <div class="absolute bottom-3 left-3 right-3 overflow-hidden">
-                        <div class="bg-slate-950/85 backdrop-blur-md px-3 py-2 border border-white/5">
-                          <p class="text-white font-bold text-sm truncate font-mono">
-                            {project.title}
-                          </p>
-                          <p style="color: var(--accent);" class="text-xs font-medium truncate">
-                            {project.company}
-                          </p>
+                  featuredProjects.length > 0 ? (
+                    featuredProjects.map((project, i) => (
+                      <div
+                        class="hero-slide absolute inset-0 flex items-center justify-center p-3 transition-[transform,opacity] duration-700 ease-in-out"
+                        data-index={i}
+                        data-project-index={projectsData.findIndex((p) => p.title === project.title)}
+                        style={
+                          i === 0
+                            ? 'transform:translateX(0);opacity:1;'
+                            : 'transform:translateX(100%);opacity:0;'
+                        }
+                      >
+                        <img
+                          src={withBase(project.heroImage)}
+                          alt={project.title}
+                          class="w-full h-full object-cover"
+                          loading="lazy"
+                          width="450"
+                          height="450"
+                        />
+                        <div class="absolute bottom-3 left-3 right-3 overflow-hidden">
+                          <div class="bg-slate-950/85 backdrop-blur-md px-3 py-2 border border-white/5">
+                            <p class="text-white font-bold text-sm truncate font-mono">
+                              {project.title}
+                            </p>
+                            <p style="color: var(--accent);" class="text-xs font-medium truncate">
+                              {project.company}
+                            </p>
+                          </div>
                         </div>
                       </div>
+                    ))
+                  ) : (
+                    <div class="absolute inset-0 flex items-center justify-center p-6 text-center">
+                      <p class="text-sm text-slate-400">No hay proyectos destacados con imagen.</p>
                     </div>
-                  ))
+                  )
                 }
               </div>
 
@@ -1018,9 +1029,11 @@ const heroParts = personalData.heroRole.split(' & ');
   }
 
   function nextSlide() {
+    if (total === 0) return;
     goTo((current + 1) % total, 1);
   }
   function prevSlide() {
+    if (total === 0) return;
     goTo((current - 1 + total) % total, -1);
   }
 
