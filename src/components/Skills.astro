@@ -45,7 +45,9 @@ const iconForSkill = (name: string) => skillIconMap[name] ?? 'mdi:star-four-poin
                   <img
                     src={withBase(skill.logo)}
                     alt={skill.name}
-                    class="skill-icon"
+                    class={`skill-icon ${
+                      skill.logo.includes('/materialdesign/') ? 'skill-icon-mono' : 'skill-icon-color'
+                    }`}
                     loading="lazy"
                     width="36"
                     height="36"
@@ -128,11 +130,24 @@ const iconForSkill = (name: string) => skillIconMap[name] ?? 'mdi:star-four-poin
     align-items: center;
     justify-content: center;
     object-fit: contain;
-    filter: brightness(0.85) saturate(0.8);
-    transition: filter 0.2s ease;
+    color: #f8fafc;
+    filter: brightness(0.98) saturate(1.05);
+    transition: filter 0.2s ease, color 0.2s ease;
   }
-  .skill-item:hover .skill-icon {
-    filter: brightness(1.1) saturate(1.2);
+  .skill-icon-mono {
+    filter: brightness(0) invert(1) opacity(0.95) drop-shadow(0 0 3px rgba(56, 189, 248, 0.22));
+  }
+  .skill-icon-color {
+    filter: saturate(1.15) brightness(1.05);
+  }
+  .skill-item:hover .skill-icon-mono {
+    filter: brightness(0) invert(1) opacity(1) drop-shadow(0 0 7px rgba(56, 189, 248, 0.42));
+  }
+  .skill-item:hover .skill-icon-color {
+    filter: saturate(1.28) brightness(1.12);
+  }
+  .skill-item:hover iconify-icon.skill-icon {
+    color: #e2e8f0;
   }
   .skill-icon.is-hidden {
     display: none;

@@ -272,12 +272,30 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
 
         {
           dashboardShots.length > 0 ? (
-            <div class="gallery-grid">
+            <div class="gallery-carousel" aria-label="Galeria de dashboards Superstore 360">
               {dashboardShots.map((img, index) => (
-                <figure class="shot-card">
+                <figure class={`shot-slide${index === 0 ? ' is-active' : ''}`} data-slide={index}>
                   <img src={withBase(img)} alt={`Dashboard Superstore 360 ${index + 1}`} loading="lazy" />
                 </figure>
               ))}
+
+              <button type="button" class="gallery-nav prev" id="gallery-prev" aria-label="Imagen anterior">
+                &larr;
+              </button>
+              <button type="button" class="gallery-nav next" id="gallery-next" aria-label="Siguiente imagen">
+                &rarr;
+              </button>
+
+              <div class="gallery-dots" id="gallery-dots">
+                {dashboardShots.map((_, index) => (
+                  <button
+                    type="button"
+                    class={`gallery-dot${index === 0 ? ' is-active' : ''}`}
+                    data-dot={index}
+                    aria-label={`Ir a imagen ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           ) : (
             <p class="gallery-empty">
@@ -674,11 +692,89 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     -webkit-text-fill-color: transparent;
   }
 
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
+  .gallery-carousel {
     margin-top: 30px;
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    background: #020617;
+    min-height: min(72vh, 680px);
+  }
+
+  .shot-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .shot-slide.is-active {
+    display: block;
+  }
+
+  .shot-slide {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .shot-slide img {
+    width: 100%;
+    height: min(72vh, 680px);
+    object-fit: contain;
+    display: block;
+    background: #020617;
+  }
+
+  .gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    background: rgba(2, 6, 23, 0.72);
+    color: #e9d5ff;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.2s ease;
+  }
+  .gallery-nav:hover {
+    background: rgba(139, 92, 246, 0.18);
+    border-color: rgba(139, 92, 246, 0.9);
+  }
+  .gallery-nav.prev {
+    left: 14px;
+  }
+  .gallery-nav.next {
+    right: 14px;
+  }
+
+  .gallery-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+  }
+
+  .gallery-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(226, 232, 240, 0.35);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .gallery-dot.is-active {
+    width: 24px;
+    background: #8b5cf6;
   }
 
   .shot-card {
@@ -749,5 +845,77 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     .arrow {
       transform: rotate(90deg);
     }
+
+    .gallery-carousel {
+      min-height: 260px;
+    }
+
+    .shot-slide img {
+      height: min(58vh, 420px);
+    }
+
+    .gallery-nav {
+      width: 38px;
+      height: 38px;
+      font-size: 1rem;
+    }
   }
 </style>
+
+<script>
+  const slides = Array.from(document.querySelectorAll<HTMLElement>('#galeria .shot-slide'));
+  const dots = Array.from(document.querySelectorAll<HTMLElement>('#galeria .gallery-dot'));
+  const carousel = document.querySelector<HTMLElement>('#galeria .gallery-carousel');
+  const prevBtn = document.getElementById('gallery-prev');
+  const nextBtn = document.getElementById('gallery-next');
+  let idx = 0;
+  let timer: ReturnType<typeof setInterval> | null = null;
+  let touchStartX = 0;
+
+  function paint(next: number) {
+    if (slides.length === 0) return;
+    idx = (next + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === idx));
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
+  }
+
+  function startAuto() {
+    if (slides.length < 2) return;
+    if (timer) clearInterval(timer);
+    timer = setInterval(() => paint(idx + 1), 4200);
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    paint(idx - 1);
+    startAuto();
+  });
+  nextBtn?.addEventListener('click', () => {
+    paint(idx + 1);
+    startAuto();
+  });
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      paint(i);
+      startAuto();
+    });
+  });
+
+  carousel?.addEventListener(
+    'touchstart',
+    (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX;
+    },
+    { passive: true }
+  );
+
+  carousel?.addEventListener('touchend', (e: TouchEvent) => {
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(deltaX) < 40) return;
+    if (deltaX < 0) paint(idx + 1);
+    else paint(idx - 1);
+    startAuto();
+  });
+
+  paint(0);
+  startAuto();
+</script>
