@@ -1,27 +1,46 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, readdirSync } from 'node:fs';
+import { join, extname } from 'node:path';
 import { withBase } from '../../lib/assetPath';
 
 const title = 'Superstore 360 | Business Intelligence Analytics';
 const description =
   'Caso de proyecto: solucion end-to-end de Business Intelligence para retail, enfocada en visibilidad ejecutiva, KPI Analytics y Decision Support.';
 
-const dashboardCandidates = [
-  '/images/projects/superstore-360/dashboard-1.jpg',
-  '/images/projects/superstore-360/dashboard-2.jpg',
-  '/images/projects/superstore-360/dashboard-3.jpg',
-  '/images/projects/superstore-360/dashboard-4.jpg',
-  '/images/projects/superstore-360/dashboard-1.png',
-  '/images/projects/superstore-360/dashboard-2.png',
-  '/images/projects/superstore-360/dashboard-3.png',
-  '/images/projects/superstore-360/dashboard-4.png',
+const dashboardDir = join(process.cwd(), 'public', 'images', 'projects', 'superstore-360');
+const rootProjectsDir = join(process.cwd(), 'public', 'images', 'projects');
+const allowedExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp', '.jfif', '.jiff']);
+const rootDashboardNames = new Set(['clientes', 'desempeno', 'desempeño', 'producto', 'ventas']);
+const githubRawBase =
+  'https://raw.githubusercontent.com/DouglasAdonCa/DouglasAdonCa.github.io/main/public/images/projects';
+
+function readImages(dir: string, basePath: string, nameFilter?: Set<string>) {
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((name) => {
+      if (!allowedExtensions.has(extname(name).toLowerCase())) return false;
+      if (!nameFilter) return true;
+      const baseName = name.replace(/\.[^.]+$/, '').toLowerCase();
+      return nameFilter.has(baseName);
+    })
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
+    .map((name) => `${basePath}/${name}`);
+}
+
+const localDashboardShots = [
+  ...readImages(dashboardDir, '/images/projects/superstore-360'),
+  ...readImages(rootProjectsDir, '/images/projects', rootDashboardNames),
 ];
 
-const dashboardShots = dashboardCandidates.filter((img) =>
-  existsSync(join(process.cwd(), 'public', img.replace(/^\//, '')))
-);
+const remoteDashboardShots = [
+  `${githubRawBase}/clientes.jfif`,
+  `${githubRawBase}/desempe%C3%B1o.jfif`,
+  `${githubRawBase}/producto.jfif`,
+  `${githubRawBase}/ventas.jfif`,
+];
+
+const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : remoteDashboardShots;
 ---
 
 <Layout title={title} description={description}>
@@ -265,6 +284,9 @@ const dashboardShots = dashboardCandidates.filter((img) =>
               Aun no hay imagenes cargadas. Agrega tus capturas en
               <strong> public/images/projects/superstore-360/</strong> con nombres como
               <strong> dashboard-1.jpg</strong>, <strong>dashboard-2.jpg</strong> o en formato PNG.
+              Tambien se aceptan archivos <strong>.jfif</strong> en
+              <strong> public/images/projects/</strong> con nombres como <strong>clientes</strong>,
+              <strong>desempeno</strong>, <strong>producto</strong> y <strong>ventas</strong>.
             </p>
           )
         }

@@ -92,9 +92,9 @@
       "Data Storytelling"
     ],
     "icon": "presentation-chart-line",
-    "sliderImage": "/images/projects/blender-mockup.jpg",
+    "sliderImage": "https://raw.githubusercontent.com/DouglasAdonCa/DouglasAdonCa.github.io/main/public/images/projects/clientes.jfif",
     "sliderOrder": 4,
-    "backgroundImage": "/images/projects/blender-mockup.jpg",
+    "backgroundImage": "https://raw.githubusercontent.com/DouglasAdonCa/DouglasAdonCa.github.io/main/public/images/projects/clientes.jfif",
     "link": "/projects/superstore-360",
     "colorIcon": "/images/icons/materialdesign/chart-timeline-variant.svg",
     "githubRepo": ""
