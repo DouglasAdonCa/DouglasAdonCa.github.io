@@ -2,7 +2,7 @@
 import portfolioData from '../data/portfolio.json';
 import { withBase } from '../lib/assetPath';
 
-const categories = ['All', ...Array.from(new Set(portfolioData.map((p) => p.category)))];
+const categories = ['Todos', ...Array.from(new Set(portfolioData.map((p) => p.category)))];
 
 const categoryColors: Record<string, string> = {
   Technology: '#6366f1',
@@ -25,11 +25,11 @@ const portfolioDataForClient = portfolioData.map((p) => ({
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14 reveal">
       <p class="text-sm font-semibold tracking-widest text-highlight uppercase mb-3">
-        My portfolio
+        Mi portafolio
       </p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Portfolio</h2>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Portafolio</h2>
       <p class="mt-4 text-base max-w-xl mx-auto" style="color: var(--text-muted);">
-        Projects across different fields and clients.
+        Soluciones, casos y trabajos aplicados en distintos contextos de negocio.
       </p>
     </div>
 
@@ -37,15 +37,15 @@ const portfolioDataForClient = portfolioData.map((p) => ({
       {
         categories.map((cat) => (
           <button
-            class={`pf-filter-btn ${cat === 'All' ? 'active' : ''}`}
+            class={`pf-filter-btn ${cat === 'Todos' ? 'active' : ''}`}
             data-filter={cat}
             style={
-              cat !== 'All' && cat in categoryColors ? `--cat-color: ${categoryColors[cat]}` : ''
+              cat !== 'Todos' && cat in categoryColors ? `--cat-color: ${categoryColors[cat]}` : ''
             }
           >
             {cat}
             <span class="pf-filter-count">
-              {cat === 'All'
+              {cat === 'Todos'
                 ? portfolioData.length
                 : portfolioData.filter((p) => p.category === cat).length}
             </span>
@@ -64,7 +64,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
             style={`--color: ${categoryColors[project.category] ?? '#6366f1'}; --delay: ${i * 0.04}s`}
             role="button"
             tabindex="0"
-            aria-label={`View ${project.title} screenshots`}
+            aria-label={`Ver pantallas de ${project.title}`}
           >
             <div class="portfolio-img-wrap">
               <img
@@ -83,7 +83,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
                     <button
                       class="portfolio-view-btn"
                       data-project={i}
-                      aria-label={`View ${project.title} project`}
+                      aria-label={`Ver proyecto ${project.title}`}
                     >
                       <svg
                         class="w-4 h-4"
@@ -99,10 +99,10 @@ const portfolioDataForClient = portfolioData.map((p) => ({
                         />
                         <circle cx="12" cy="12" r="3" fill="none" />
                       </svg>
-                      View Screens
+                      Ver pantallas
                     </button>
                     {project.images.length > 1 && (
-                      <span class="portfolio-screen-pill">{project.images.length} screens</span>
+                      <span class="portfolio-screen-pill">{project.images.length} pantallas</span>
                     )}
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
             <div class="portfolio-footer">
               <span class="portfolio-title">{project.title}</span>
               <span class="portfolio-img-count">
-                {project.images.length > 1 ? `${project.images.length} screens` : '1 screen'}
+                {project.images.length > 1 ? `${project.images.length} pantallas` : '1 pantalla'}
               </span>
             </div>
           </div>
@@ -128,7 +128,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
   aria-hidden="true"
   role="dialog"
   aria-modal="true"
-  aria-label="Project viewer"
+  aria-label="Visor de proyecto"
 >
   <div class="modal-box">
     <div class="modal-topbar">
@@ -137,12 +137,12 @@ const portfolioDataForClient = portfolioData.map((p) => ({
         <span id="pf-modal-title" class="modal-title"></span>
       </div>
       <div class="modal-topbar-right">
-        <div class="zoom-controls" aria-label="Zoom controls">
+        <div class="zoom-controls" aria-label="Controles de zoom">
           <button
             id="pf-zoom-out"
             class="zoom-btn"
-            aria-label="Zoom out"
-            title="Zoom out (−)"
+            aria-label="Alejar"
+            title="Alejar (-)"
             disabled
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -152,7 +152,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
             </svg>
           </button>
           <span id="pf-zoom-level" class="zoom-level-label">1×</span>
-          <button id="pf-zoom-in" class="zoom-btn" aria-label="Zoom in" title="Zoom in (+)">
+          <button id="pf-zoom-in" class="zoom-btn" aria-label="Acercar" title="Acercar (+)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="7"></circle><path
                 stroke-linecap="round"
@@ -162,8 +162,8 @@ const portfolioDataForClient = portfolioData.map((p) => ({
           <button
             id="pf-zoom-reset"
             class="zoom-btn zoom-reset"
-            aria-label="Reset zoom"
-            title="Reset zoom (R)"
+            aria-label="Restablecer zoom"
+            title="Restablecer zoom (R)"
             style="display:none"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -175,7 +175,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
             </svg>
           </button>
         </div>
-        <button id="pf-modal-close" class="modal-close-btn" aria-label="Close lightbox">
+        <button id="pf-modal-close" class="modal-close-btn" aria-label="Cerrar visor">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -1087,7 +1087,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
     p.images.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.className = `modal-dot ${i === currentSlide ? 'active' : ''}`;
-      dot.setAttribute('aria-label', `View screen ${i + 1}: ${p.slides[i] ?? ''}`);
+      dot.setAttribute('aria-label', `Ver pantalla ${i + 1}: ${p.slides[i] ?? ''}`);
       dot.addEventListener('click', () => {
         currentSlide = i;
         resetZoom(false);

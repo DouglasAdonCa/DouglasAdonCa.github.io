@@ -3,78 +3,81 @@ import Layout from '../layouts/Layout.astro';
 import personalData from '../data/personal.json';
 
 const currentYear = new Date().getFullYear();
-const title = `Privacy Policy | ${personalData.name}`;
+const title = `Política de Privacidad | ${personalData.name}`;
 ---
 
-<Layout title={title} description={`Privacy policy for ${personalData.name}'s portfolio website.`}>
+<Layout title={title} description={`Política de privacidad del portafolio de ${personalData.name}.`}>
   <main id="main-content" class="policy-page">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl py-24">
-      <a href="/" class="back-link">← Back to portfolio</a>
+      <a href="/" class="back-link">← Volver al portafolio</a>
 
-      <h1 class="text-3xl sm:text-4xl font-bold mt-8 mb-2 gradient-text">Privacy Policy</h1>
-      <p class="text-slate-500 text-sm mb-12">Last updated: January {currentYear}</p>
+      <h1 class="text-3xl sm:text-4xl font-bold mt-8 mb-2 gradient-text">
+        Política de Privacidad
+      </h1>
+      <p class="text-slate-500 text-sm mb-12">Última actualización: enero de {currentYear}</p>
 
       <div class="prose-section">
-        <h2>1. Information We Collect</h2>
+        <h2>1. Información recopilada</h2>
         <p>
-          This is a static portfolio website. We collect only information you voluntarily provide
-          through the contact form: your name, email address, and message content.
+          Este es un sitio estático de portafolio. Solo recopila la información que compartes
+          voluntariamente mediante el formulario de contacto: nombre, correo y contenido del mensaje.
         </p>
         <p>
-          We do not use cookies, tracking pixels, or analytics scripts. We do not collect IP
-          addresses or browsing behaviour.
-        </p>
-
-        <h2>2. How We Use Your Information</h2>
-        <p>
-          Information submitted via the contact form is used solely to respond to your inquiry.
-          Contact form submissions are processed by
-          <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a> — their
-          <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">privacy policy</a>
-          governs that data.
+          No se utilizan cookies, píxeles de seguimiento ni scripts de analítica. No se recopilan
+          direcciones IP ni comportamiento de navegación desde este sitio.
         </p>
 
-        <h2>3. Third-Party Services</h2>
-        <p>This site loads resources from the following third-party services:</p>
+        <h2>2. Uso de la información</h2>
+        <p>
+          La información enviada mediante el formulario se usa únicamente para responder tu consulta.
+          Los envíos del formulario son procesados por
+          <a href="https://web3forms.com" target="_blank" rel="noopener">Web3Forms</a>; su
+          <a href="https://web3forms.com/privacy" target="_blank" rel="noopener"
+            >política de privacidad</a
+          >
+          rige esos datos.
+        </p>
+
+        <h2>3. Servicios de terceros</h2>
+        <p>Este sitio carga recursos desde los siguientes servicios externos:</p>
         <ul>
           <li>
-            <strong>Google Fonts</strong> — typography (Inter). Font files are cached locally at build
-            time and served from this domain. Requests reach <code>fonts.googleapis.com</code> only if
-            the local cache could not be built (e.g. no network access during the build).
+            <strong>Google Fonts</strong>: tipografía Inter. Los archivos se cachean localmente al
+            construir el sitio y se sirven desde este dominio cuando están disponibles.
           </li>
           <li>
-            <strong>Iconify</strong> — social icons loaded on demand from <code
+            <strong>Iconify</strong>: íconos sociales cargados bajo demanda desde <code
               >api.iconify.design</code
             >.
           </li>
-          <li><strong>Web3Forms</strong> — contact form submission endpoint.</li>
+          <li><strong>Web3Forms</strong>: endpoint para envío del formulario de contacto.</li>
         </ul>
         <p>
-          Each of these services may log your IP address as part of normal server operation. Please
-          review their respective privacy policies for details.
+          Estos servicios pueden registrar tu dirección IP como parte de su operación normal. Revisa
+          sus políticas de privacidad para más detalles.
         </p>
 
-        <h2>4. Data Retention</h2>
+        <h2>4. Retención de datos</h2>
         <p>
-          We do not store any personal data on our own servers. Contact form data is retained by
-          Web3Forms per their policy.
+          No almaceno datos personales en servidores propios. Los datos enviados por el formulario
+          son retenidos por Web3Forms de acuerdo con su política.
         </p>
 
-        <h2>5. Your Rights</h2>
+        <h2>5. Tus derechos</h2>
         <p>
-          You may request deletion of any contact form submission by emailing
+          Puedes solicitar la eliminación de cualquier mensaje enviado por el formulario escribiendo a
           <a href={`mailto:${personalData.email}`}>{personalData.email}</a>.
         </p>
 
-        <h2>6. Changes to This Policy</h2>
+        <h2>6. Cambios en esta política</h2>
         <p>
-          This policy may be updated periodically. The date at the top of this page reflects the
-          most recent revision.
+          Esta política puede actualizarse periódicamente. La fecha superior refleja la revisión más
+          reciente.
         </p>
 
-        <h2>7. Contact</h2>
+        <h2>7. Contacto</h2>
         <p>
-          Privacy questions? Reach out at
+          ¿Tienes preguntas sobre privacidad? Escríbeme a
           <a href={`mailto:${personalData.email}`}>{personalData.email}</a>.
         </p>
       </div>

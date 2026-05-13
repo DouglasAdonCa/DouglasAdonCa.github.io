@@ -1,114 +1,104 @@
 {
-  "title": "Your Name Here | Creative Portfolio",
-  "description": "Portfolio of a designer, developer, and creator. Browse work spanning web, visual design, 3D, video, and more — then reach out.",
-  "ogSiteName": "Portfolio",
-  "shortName": "FOLIO",
-  "tagline": "Designing experiences · Building products · Telling stories",
+  "title": "Douglas Adon Capellan | IA, Business Intelligence y Analítica Operacional",
+  "description": "Portafolio de Douglas Adon Capellan, Ingeniero Industrial especializado en soluciones de negocio impulsadas por IA, Business Intelligence, analítica operacional, confiabilidad de activos e infraestructura crítica.",
+  "ogSiteName": "Douglas Adon Capellan",
+  "shortName": "DAC",
+  "tagline": "IA aplicada al negocio · Business Intelligence · Analítica operacional",
   "themeStorageKey": "portfolio-theme",
   "web3formsKey": "YOUR_WEB3FORMS_KEY_HERE",
   "footerAttribution": {
-    "builder": "Built with this open-source template",
-    "builderUrl": "https://github.com/your-github-handle",
-    "host": "Hosted on your platform of choice",
-    "hostUrl": "https://yourdomain.com"
+    "builder": "Construido con esta plantilla open-source",
+    "builderUrl": "https://github.com/DouglasAdonCa",
+    "host": "Publicado en GitHub Pages",
+    "hostUrl": "https://github.com/DouglasAdonCa"
   },
   "retroTvCount": 21,
   "seoKeywords": [
-    "Creative Portfolio",
-    "Web Designer",
-    "Visual Artist",
-    "UI/UX Design",
-    "Front-End Developer",
-    "3D Artist",
-    "Motion Graphics",
-    "Brand Identity",
-    "Freelance Designer",
-    "Video Editor",
-    "Photography",
-    "Illustration",
-    "Digital Art",
-    "Graphic Design",
-    "Interactive Design",
-    "Product Design",
-    "Creative Direction",
-    "Art Direction",
-    "Full-Stack Developer",
-    "Animator",
-    "Typographer",
-    "Storyteller",
-    "Open to Work",
-    "Available for Projects",
-    "Design Systems",
-    "Visual Storytelling"
+    "Arquitecto de Soluciones IA",
+    "Business Intelligence",
+    "Analítica Operacional",
+    "Inteligencia Operacional",
+    "Ingeniería Industrial",
+    "Power BI",
+    "Python",
+    "SQL",
+    "Data Science for Business",
+    "Analítica Predictiva",
+    "Forecasting",
+    "Mantenimiento Predictivo",
+    "Confiabilidad de Activos",
+    "Infraestructura Crítica",
+    "Utilities",
+    "SCADA",
+    "Dashboards Ejecutivos",
+    "KPIs Operacionales",
+    "Automatización Analítica",
+    "IA Aplicada a Negocios",
+    "Optimización Operacional",
+    "Toma de Decisiones Basada en Datos"
   ],
   "navExternal": [
     {
-      "label": "Blog",
-      "desc": "Writing on design, process, and what I'm learning",
-      "personalKey": "blog",
-      "urlTemplate": "{value}"
-    },
-    {
       "label": "GitHub",
-      "desc": "Open-source work and side experiments",
+      "desc": "Repositorios, proyectos técnicos y experimentos de datos",
       "personalKey": "github",
       "urlTemplate": "https://github.com/{value}"
     },
     {
       "label": "LinkedIn",
-      "desc": "Professional profile and recommendations",
+      "desc": "Perfil profesional, trayectoria y red de contacto",
       "personalKey": "linkedin",
       "urlTemplate": "https://linkedin.com/in/{value}"
     },
     {
-      "label": "Email",
-      "desc": "Best way to reach me for project inquiries",
+      "label": "Correo",
+      "desc": "Contacto directo para oportunidades y colaboración",
       "personalKey": "email",
       "urlTemplate": "mailto:{value}"
     },
     {
-      "label": "Phone",
-      "desc": "Available for calls by appointment",
-      "personalKey": "phone",
-      "urlTemplate": "tel:{value}"
+      "label": "Teléfono",
+      "desc": "Disponible para llamadas por coordinación previa",
+      "personalKey": "phoneTel",
+      "urlTemplate": "{value}"
     }
   ],
   "serviceSites": [
     {
-      "badge": "Client Work",
+      "badge": "Portafolio",
       "badgeColor": "#6366f1",
       "cardAccent": "#6366f1",
       "glowColor": "rgba(99, 102, 241, 0.12)",
       "iconBg": "rgba(99, 102, 241, 0.1)",
       "iconBorder": "rgba(99, 102, 241, 0.18)",
       "iconType": "web",
-      "name": "YourStudio.co",
-      "url": "https://yourstudio.co",
-      "description": "A dedicated space for client work — branding, web builds, campaigns, and everything in between. Full-service creative from concept through delivery, built on clear communication and no surprises.",
+      "name": "IA & Business Intelligence",
+      "url": "https://github.com/DouglasAdonCa",
+      "description": "Espacio para presentar soluciones de inteligencia operacional, analítica avanzada y modelos aplicados a decisiones de negocio.",
       "features": [
-        "Brand Identity & Visual Systems",
-        "Web Design & Development",
-        "Campaign Creative & Direction"
+        "Business Intelligence & Dashboards",
+        "Analítica Predictiva e IA",
+        "Optimización Operacional"
       ],
-      "ctaText": "View Studio Work"
+      "ctaText": "Ver Proyectos"
     },
     {
-      "badge": "Side Project",
+      "badge": "GitHub",
       "badgeColor": "#10b981",
       "cardAccent": "#10b981",
       "glowColor": "rgba(16, 185, 129, 0.15)",
       "iconBg": "rgba(16, 185, 129, 0.1)",
       "iconBorder": "rgba(16, 185, 129, 0.2)",
       "iconType": "server",
-      "name": "YourProject.io",
-      "url": "https://yourproject.io",
-      "description": "A personal project built to scratch an itch — self-hosted, self-managed, and entirely my own problem to maintain. Independent, opinionated, and shipped without a committee.",
+      "name": "DouglasAdonCa",
+      "url": "https://github.com/DouglasAdonCa",
+      "description": "Repositorio público para proyectos, pruebas técnicas y soluciones relacionadas con datos, automatización, IA y Business Intelligence.",
       "features": [
-        "Self-Hosted & Fully Independent",
-        "Iterating in Public",
-        "Built for One Person: Me"
+        "Python, SQL y Power BI",
+        "Modelos Predictivos",
+        "Automatización Analítica"
       ],
-      "ctaText": "Check It Out"
+      "ctaText": "Abrir GitHub"
     }
   ]
 }

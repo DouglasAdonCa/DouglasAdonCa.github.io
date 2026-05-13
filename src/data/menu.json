@@ -1,52 +1,52 @@
 {
   "sections": [
     {
-      "label": "About",
-      "shortLabel": "About",
+      "label": "Sobre mí",
+      "shortLabel": "Sobre mí",
       "href": "#about",
-      "desc": "Background, experience, and approach"
+      "desc": "Perfil, experiencia y enfoque profesional"
     },
     {
-      "label": "Expertise",
+      "label": "Especialización",
       "shortLabel": "Expertise",
       "href": "#expertise",
-      "desc": "What I focus on and how I work"
+      "desc": "Áreas donde aporto valor"
     },
     {
-      "label": "Skills",
+      "label": "Habilidades",
       "shortLabel": "Skills",
       "href": "#skills",
-      "desc": "Tools and technologies I use"
+      "desc": "Herramientas, tecnologías y capacidades"
     },
     {
-      "label": "Portfolio",
-      "shortLabel": "Portfolio",
+      "label": "Portafolio",
+      "shortLabel": "Portafolio",
       "href": "#portfolio",
-      "desc": "Client and commercial work"
+      "desc": "Casos, soluciones y trabajo aplicado"
     },
     {
-      "label": "Projects",
-      "shortLabel": "Projects",
+      "label": "Proyectos",
+      "shortLabel": "Proyectos",
       "href": "#projects",
-      "desc": "Personal projects and experiments"
+      "desc": "Proyectos técnicos y experimentos"
     },
     {
-      "label": "Certifications",
+      "label": "Certificaciones",
       "shortLabel": "Certs",
       "href": "#certifications",
-      "desc": "Training, courses, and credentials"
+      "desc": "Formación, cursos y credenciales"
     },
     {
-      "label": "Services",
-      "shortLabel": "Services",
+      "label": "Iniciativas",
+      "shortLabel": "Iniciativas",
       "href": "#services",
-      "desc": "Sites and projects I run"
+      "desc": "Sitios, recursos y espacios profesionales"
     },
     {
-      "label": "Contact",
-      "shortLabel": "Contact",
+      "label": "Contacto",
+      "shortLabel": "Contacto",
       "href": "#contact",
-      "desc": "Start a project or just say hello"
+      "desc": "Conversemos sobre oportunidades o colaboración"
     }
   ]
 }

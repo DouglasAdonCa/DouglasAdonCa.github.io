@@ -1,22 +1,32 @@
 [
   {
-    "key": "sysadmin",
-    "title": "Design & Art Direction",
-    "description": "Visual identity, layout, typography, and the aesthetic decisions that make people stop and look twice. Whether print or screen, the goal is the same — work that holds up."
+    "title": "Inteligencia Artificial Aplicada a Negocios",
+    "description": "Diseño soluciones impulsadas por IA para transformar datos empresariales en decisiones inteligentes, automatizadas y accionables orientadas a optimización operativa y crecimiento estratégico.",
+    "icon": "BrainCircuit"
   },
   {
-    "key": "webdev",
-    "title": "Web Design & Development",
-    "description": "From wireframe to deployment — building sites and apps that look considered, perform well, and give visitors exactly what they came for."
+    "title": "Business Intelligence & Decision Intelligence",
+    "description": "Construcción de ecosistemas analíticos, dashboards ejecutivos y sistemas de soporte a decisiones mediante Power BI, KPIs estratégicos y analítica avanzada.",
+    "icon": "BarChart3"
   },
   {
-    "key": "freelance",
-    "title": "Creative Freelance",
-    "description": "Independent project work in photography, video, 3D, illustration, or wherever the brief leads. Direct to work with, flexible, and invested in the outcome."
+    "title": "Analítica Predictiva & Forecasting",
+    "description": "Desarrollo modelos predictivos orientados a forecasting, churn prediction, segmentación de clientes y optimización de estrategias basadas en datos.",
+    "icon": "TrendingUp"
   },
   {
-    "key": "leadership",
-    "title": "Collaboration & Direction",
-    "description": "Working alongside teams, clients, and stakeholders to take a project from idea to shipped — clear communication, honest timelines, and work that actually gets done."
+    "title": "Inteligencia Operacional",
+    "description": "Implementación de soluciones analíticas para monitoreo operacional, análisis de desempeño y optimización de infraestructura crítica en entornos industriales y utilities.",
+    "icon": "Activity"
+  },
+  {
+    "title": "Confiabilidad de Activos & Mantenimiento",
+    "description": "Optimización de mantenimiento preventivo, predictivo y estrategias de confiabilidad utilizando KPIs operacionales, integración SCADA y análisis de desempeño.",
+    "icon": "ShieldCheck"
+  },
+  {
+    "title": "Automatización & Analytics Engineering",
+    "description": "Automatización de procesos analíticos, pipelines de datos y flujos de trabajo inteligentes utilizando Python, SQL, GitHub y arquitecturas analíticas modernas.",
+    "icon": "Workflow"
   }
 ]

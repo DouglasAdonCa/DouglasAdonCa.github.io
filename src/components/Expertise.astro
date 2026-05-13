@@ -2,13 +2,16 @@
 import servicesData from '../data/expertise.json';
 // Each service entry's `key` field selects which inline SVG is rendered.
 // To add a new service type, add a matching `{svc.key === 'yourkey' && (...)}` block in the template.
+
+const lucideIcon = (name?: string) =>
+  name ? `lucide:${name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()}` : '';
 ---
 
 <section id="expertise" class="py-20" style="scroll-margin-top: 80px;">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-14 reveal">
-      <p class="text-sm font-semibold tracking-widest text-highlight uppercase mb-3">What I do</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Expertise</h2>
+      <p class="text-sm font-semibold tracking-widest text-highlight uppercase mb-3">Qué hago</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Especialización</h2>
     </div>
 
     <div class="services-grid max-w-5xl mx-auto">
@@ -17,6 +20,15 @@ import servicesData from '../data/expertise.json';
           <div class="svc-card reveal" style={`transition-delay:${i * 0.08}s`}>
             <div class="svc-inner">
               <div class="svc-icon-box">
+                {svc.icon && (
+                  <iconify-icon
+                    icon={lucideIcon(svc.icon)}
+                    class="svc-lucide"
+                    width="34"
+                    height="34"
+                    aria-hidden="true"
+                  />
+                )}
                 {svc.key === 'sysadmin' && (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -241,6 +253,19 @@ import servicesData from '../data/expertise.json';
     width: 100%;
     height: 100%;
     display: block;
+  }
+
+  .svc-lucide {
+    color: #818cf8;
+    transition:
+      color 0.35s ease,
+      transform 0.35s ease,
+      filter 0.35s ease;
+  }
+  .svc-card:hover .svc-lucide {
+    color: #22d3ee;
+    filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.25));
+    transform: scale(1.05);
   }
 
   .svc-card .svc-svg stop {

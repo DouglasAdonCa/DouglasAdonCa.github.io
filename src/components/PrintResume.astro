@@ -28,12 +28,12 @@ const inProgressCerts = certsData.filter(c => c.status !== 'Earned');
   <hr class="header-rule" />
 
   <section class="resume-section">
-    <h2 class="section-title">Summary</h2>
+    <h2 class="section-title">Resumen</h2>
     <p class="body-text">{personal.bio}</p>
   </section>
 
   <section class="resume-section">
-    <h2 class="section-title">Technical Skills</h2>
+    <h2 class="section-title">Habilidades Técnicas</h2>
     <div class="skills-grid">
       {skillsData.map(category => (
         <div class="skill-row">
@@ -45,12 +45,12 @@ const inProgressCerts = certsData.filter(c => c.status !== 'Earned');
   </section>
 
   <section class="resume-section">
-    <h2 class="section-title">Areas of Expertise</h2>
+    <h2 class="section-title">Áreas de Especialización</h2>
     <p class="body-text">{expertiseData.map(e => e.title).join('  ·  ')}</p>
   </section>
 
   <section class="resume-section">
-    <h2 class="section-title">Certifications</h2>
+    <h2 class="section-title">Certificaciones</h2>
     <div class="cert-list">
       {earnedCerts.map(cert => (
         <span class="cert-item cert-earned">
@@ -66,7 +66,7 @@ const inProgressCerts = certsData.filter(c => c.status !== 'Earned');
   </section>
 
   <section class="resume-section">
-    <h2 class="section-title">Notable Projects</h2>
+    <h2 class="section-title">Proyectos Destacados</h2>
     <div class="projects-list">
       {resumeProjects.map(project => project && (
         <div class="project-item">
@@ -82,12 +82,12 @@ const inProgressCerts = certsData.filter(c => c.status !== 'Earned');
 
   <div class="resume-footer-row">
     <section class="resume-section">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title">Educación</h2>
       <p class="body-text">{personal.education}</p>
     </section>
 
     <section class="resume-section">
-      <h2 class="section-title">Volunteer</h2>
+      <h2 class="section-title">Voluntariado</h2>
       <p class="body-text">{personal.volunteer}</p>
     </section>
   </div>

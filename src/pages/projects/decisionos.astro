@@ -1,0 +1,619 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'DecisionOS | Inteligencia de Decisión para PYMES';
+const description =
+  'Caso de proyecto: arquitectura local-first de Business Intelligence, Machine Learning e IA para convertir datos transaccionales en decisiones accionables.';
+---
+
+<Layout title={title} description={description}>
+  <main class="decision-page">
+    <section class="decision-hero">
+      <div class="decision-shell">
+        <a href="/#projects" class="back-link">← Volver a proyectos</a>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Decision Intelligence · BI · IA aplicada</span>
+            <h1>DecisionOS convierte datos transaccionales en decisiones accionables.</h1>
+            <p class="lead">
+              Una arquitectura de Business Intelligence, Machine Learning e IA diseñada para PYMES:
+              opera localmente, reduce costos de infraestructura y usa LLMs como capa de
+              interpretación, no como fuente de verdad.
+            </p>
+
+            <div class="proof-grid" aria-label="Indicadores principales del proyecto">
+              <div class="proof-card">
+                <span>Revenue validado</span>
+                <strong>R$ 15.4M</strong>
+              </div>
+              <div class="proof-card">
+                <span>Consulta</span>
+                <strong>Lenguaje natural</strong>
+              </div>
+              <div class="proof-card">
+                <span>Operación</span>
+                <strong>Local-first</strong>
+              </div>
+            </div>
+          </div>
+
+          <aside class="analyst-panel" aria-label="Ejemplo de respuesta ejecutiva">
+            <div class="panel-top">
+              <span>Consulta ejecutiva</span>
+              <span>Modo analista senior</span>
+            </div>
+            <div class="panel-body">
+              <div class="question">
+                <strong>Pregunta:</strong> ¿Cuáles son las 5 decisiones accionables de mayor impacto
+                para crecer revenue y reducir churn?
+              </div>
+              <div class="answer">
+                <h2>Respuesta basada en evidencia</h2>
+                <p>
+                  Los datos permiten priorizar acciones de revenue, pero son insuficientes para
+                  diagnosticar churn con precisión sin métricas históricas de retención. DecisionOS
+                  explicita esa limitación antes de recomendar.
+                </p>
+                <p>
+                  Acciones sugeridas: optimizar ticket promedio, incrementar frecuencia de órdenes,
+                  revisar política de fletes, medir churn formalmente y segmentar clientes por valor
+                  y riesgo.
+                </p>
+                <div class="answer-grid">
+                  <div>
+                    <span>Revenue</span>
+                    <strong>R$ 15.42M</strong>
+                  </div>
+                  <div>
+                    <span>Ticket</span>
+                    <strong>R$ 159.86</strong>
+                  </div>
+                  <div>
+                    <span>Órdenes</span>
+                    <strong>96,478</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision-block">
+      <div class="decision-shell">
+        <div class="section-head">
+          <span class="kicker">La problemática</span>
+          <h2>La inteligencia de negocio avanzada sigue siendo cara, lenta y poco accesible.</h2>
+          <p>
+            Muchas empresas pequeñas ya tienen datos de clientes, pagos, productos y entregas. La
+            dificultad está en convertirlos en decisiones confiables sin grandes equipos, licencias e
+            infraestructura cloud.
+          </p>
+        </div>
+
+        <div class="card-grid three">
+          <article class="info-card">
+            <h3>Datos sin estructura analítica</h3>
+            <p>
+              Sin una capa curada, cada reporte puede usar criterios distintos y generar decisiones
+              inconsistentes.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Costos de adopción altos</h3>
+            <p>
+              Cloud, licencias, pipelines administrados y equipos especializados pueden dejar fuera a
+              muchas PYMES.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Riesgo de respuestas inventadas</h3>
+            <p>
+              Un LLM puede sonar convincente aunque no tenga datos suficientes. En negocio, eso es un
+              riesgo real.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision-block band">
+      <div class="decision-shell">
+        <div class="section-head">
+          <span class="kicker">La solución</span>
+          <h2>Un sistema local de BI + IA que separa verdad analítica de interpretación.</h2>
+          <p>
+            DecisionOS fue construido con el dataset público de Olist para simular un e-commerce real.
+            Integra Data Lake, modelo dimensional, feature store, modelos predictivos, dashboards y
+            consultas en lenguaje natural.
+          </p>
+        </div>
+
+        <div class="architecture-grid">
+          <div class="pipeline">
+            <div class="step"><code>1</code><div><strong>Data Lake por capas</strong><span>Raw, core y features en Parquet.</span></div></div>
+            <div class="step"><code>2</code><div><strong>Warehouse dimensional</strong><span>SQLite con esquema estrella para KPIs y BI.</span></div></div>
+            <div class="step"><code>3</code><div><strong>Modelos predictivos</strong><span>Propensión a recompra y forecast de ventas.</span></div></div>
+            <div class="step"><code>4</code><div><strong>Agentes de consulta</strong><span>Rutean preguntas hacia SQL, features o predicciones.</span></div></div>
+            <div class="step"><code>5</code><div><strong>LLM como intérprete</strong><span>Redacta explicaciones solo con resultados reales procesados.</span></div></div>
+          </div>
+
+          <div class="diagram" aria-label="Arquitectura de DecisionOS">
+            <div class="node"><strong>Olist</strong><span>Datos transaccionales</span></div>
+            <div class="node truth"><strong>Core</strong><span>Fuente de verdad</span></div>
+            <div class="node truth"><strong>SQLite BI</strong><span>Hechos, dimensiones y KPIs</span></div>
+            <div class="node"><strong>Power BI</strong><span>Dashboards operativos</span></div>
+            <div class="node truth"><strong>Features</strong><span>Cliente, producto, seller, geo</span></div>
+            <div class="node"><strong>ML</strong><span>Churn, recompra, forecast</span></div>
+            <div class="node ai"><strong>Agentes</strong><span>SQL, análisis, modelos</span></div>
+            <div class="node ai"><strong>LLM</strong><span>Narrativa ejecutiva</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision-block">
+      <div class="decision-shell">
+        <div class="section-head">
+          <span class="kicker">Impacto medible</span>
+          <h2>El caso no se queda en prototipo visual: hay pipelines, métricas y validaciones.</h2>
+          <p>
+            La arquitectura fue cerrada con datos curados, modelos entrenados, inferencia batch, API,
+            app Streamlit, Power BI y chequeos de calidad.
+          </p>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric-card"><span>Revenue total</span><strong>R$ 15,422,461.77</strong></div>
+          <div class="metric-card"><span>Ticket promedio</span><strong>R$ 159.86</strong></div>
+          <div class="metric-card"><span>Tasa de delay</span><strong>8.11%</strong></div>
+          <div class="metric-card"><span>Review score</span><strong>4.09 / 5</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision-block">
+      <div class="decision-shell two-col">
+        <div>
+          <span class="kicker">Bajo costo operativo</span>
+          <h2>Diseñado para PYMES, no para presupuestos enterprise.</h2>
+          <p>
+            La arquitectura reserva la inferencia IA para preguntas ejecutivas y deja la operación
+            diaria en herramientas locales. Esto evita pagar LLM por cada visualización o consulta
+            repetitiva.
+          </p>
+        </div>
+        <ul class="feature-list">
+          <li><strong>SQLite:</strong> motor analítico local para el modelo estrella.</li>
+          <li><strong>Python:</strong> procesamiento, feature engineering, modelos e inferencia batch.</li>
+          <li><strong>Power BI:</strong> visualización operativa para equipos de negocio.</li>
+          <li><strong>Windows Task Scheduler:</strong> automatización diaria sin orquestadores cloud.</li>
+          <li><strong>API bajo demanda:</strong> costo de inferencia solo cuando una decisión lo justifica.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="decision-block band">
+      <div class="decision-shell architecture-grid">
+        <div>
+          <span class="kicker">Evidencia técnica</span>
+          <h2>Forecasting, modelos y validación de lenguaje natural.</h2>
+          <p>
+            DecisionOS incluye forecast diario de ventas, modelo de propensión a recompra,
+            predicciones batch y validación de 40 preguntas en lenguaje natural con retorno
+            estructurado.
+          </p>
+          <ul class="feature-list compact">
+            <li><strong>Forecast:</strong> RandomForestRegressor con variables lag, rolling windows y calendario.</li>
+            <li><strong>Propensión:</strong> modelo v3 orientado a priorización comercial con Lift@10% positivo.</li>
+            <li><strong>Validación NL:</strong> 40 preguntas evaluadas, 40 respuestas OK, sin preguntas sin datos.</li>
+          </ul>
+        </div>
+
+        <div class="mini-chart" aria-label="Representación visual de forecast versus ventas reales">
+          <h3>Forecast vs ventas reales</h3>
+          <div class="chart-area">
+            <span class="bar b1"></span>
+            <span class="bar pred b2"></span>
+            <span class="bar b3"></span>
+            <span class="bar pred b4"></span>
+            <span class="bar b5"></span>
+            <span class="bar pred b6"></span>
+            <span class="bar b7"></span>
+            <span class="bar pred b8"></span>
+            <span class="bar b9"></span>
+          </div>
+          <div class="legend">
+            <span><i class="dot"></i>Real</span>
+            <span><i class="dot pred"></i>Predicción</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision-block">
+      <div class="decision-shell">
+        <div class="principle">
+          <span class="kicker">Principio de diseño</span>
+          <h2>El LLM no es la fuente de verdad.</h2>
+          <p>
+            El usuario pregunta en lenguaje natural, los agentes interpretan la intención, el sistema
+            ejecuta SQL, analiza features o consulta predicciones, y solo entonces el LLM redacta una
+            explicación ejecutiva.
+          </p>
+          <p>
+            Si los datos no alcanzan para responder con precisión, la respuesta debe decirlo. Esa
+            restricción es parte del producto.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .decision-page {
+    --surface: rgba(15, 23, 42, 0.72);
+    --surface-strong: rgba(15, 23, 42, 0.94);
+    --soft: rgba(15, 23, 42, 0.48);
+    --line: rgba(148, 163, 184, 0.18);
+    --green: #22c55e;
+    --blue: #38bdf8;
+    --gold: #f59e0b;
+    --red: #f87171;
+    color: var(--text);
+    background:
+      radial-gradient(circle at 12% 5%, rgba(34, 197, 94, 0.1), transparent 28rem),
+      radial-gradient(circle at 92% 8%, rgba(56, 189, 248, 0.12), transparent 30rem),
+      var(--bg);
+  }
+
+  .decision-shell {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    margin-bottom: 2rem;
+    color: var(--text-dim);
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover {
+    color: var(--accent);
+  }
+
+  .decision-hero {
+    padding: 7rem 0 4rem;
+  }
+  .hero-grid,
+  .architecture-grid,
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.04fr 0.96fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .eyebrow,
+  .kicker {
+    display: inline-flex;
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+  h1 {
+    max-width: 760px;
+    margin: 1rem 0;
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: 0;
+  }
+  h2 {
+    margin: 0.5rem 0 0.9rem;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+  p,
+  .lead {
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .proof-grid,
+  .answer-grid,
+  .metric-grid,
+  .card-grid.three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .proof-card,
+  .info-card,
+  .metric-card,
+  .analyst-panel,
+  .mini-chart,
+  .principle {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  }
+  .proof-card,
+  .metric-card {
+    min-height: 96px;
+    border-top: 4px solid var(--green);
+    padding: 1rem;
+  }
+  .proof-card:nth-child(2),
+  .metric-card:nth-child(2) {
+    border-top-color: var(--blue);
+  }
+  .proof-card:nth-child(3),
+  .metric-card:nth-child(3) {
+    border-top-color: var(--gold);
+  }
+  .metric-card:nth-child(4) {
+    border-top-color: var(--red);
+  }
+  .proof-card span,
+  .metric-card span,
+  .answer-grid span {
+    display: block;
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .proof-card strong,
+  .metric-card strong,
+  .answer-grid strong {
+    display: block;
+    margin-top: 0.45rem;
+    font-size: clamp(1.15rem, 2vw, 1.7rem);
+  }
+
+  .analyst-panel {
+    overflow: hidden;
+  }
+  .panel-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--line);
+    background: rgba(15, 23, 42, 0.95);
+    color: var(--text-dim);
+    font-size: 0.76rem;
+    font-weight: 900;
+  }
+  .panel-body {
+    padding: 1rem;
+  }
+  .question {
+    border: 1px solid var(--line);
+    padding: 0.9rem;
+    background: rgba(2, 6, 23, 0.35);
+    color: var(--text-muted);
+  }
+  .answer {
+    margin-top: 0.85rem;
+    padding: 1rem;
+    background: #020617;
+  }
+  .answer h2 {
+    font-size: 1.25rem;
+  }
+  .answer-grid div {
+    min-height: 78px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .decision-block {
+    padding: 4.5rem 0;
+  }
+  .band {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--soft);
+  }
+  .section-head {
+    max-width: 820px;
+    margin-bottom: 1.5rem;
+  }
+  .info-card {
+    padding: 1.25rem;
+  }
+  .info-card p {
+    margin-bottom: 0;
+  }
+
+  .pipeline {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr;
+    gap: 0.8rem;
+    align-items: start;
+    border: 1px solid var(--line);
+    padding: 0.9rem;
+    background: rgba(2, 6, 23, 0.35);
+  }
+  .step code {
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: #020617;
+    color: var(--blue);
+    font-family: inherit;
+    font-weight: 900;
+  }
+  .step span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .diagram {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+    border: 1px solid var(--line);
+    padding: 0.9rem;
+    background: var(--surface);
+  }
+  .node {
+    min-height: 82px;
+    display: grid;
+    align-content: center;
+    gap: 0.25rem;
+    border: 1px solid var(--line);
+    padding: 0.85rem;
+    background: rgba(2, 6, 23, 0.32);
+  }
+  .node.truth {
+    border-color: rgba(34, 197, 94, 0.42);
+    background: rgba(34, 197, 94, 0.08);
+  }
+  .node.ai {
+    border-color: rgba(56, 189, 248, 0.42);
+    background: rgba(56, 189, 248, 0.08);
+  }
+  .node span {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .feature-list {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .feature-list li {
+    border-left: 4px solid var(--green);
+    background: var(--surface);
+    padding: 0.9rem 1rem;
+    color: var(--text-muted);
+  }
+  .feature-list strong {
+    color: var(--text);
+  }
+  .feature-list.compact {
+    margin-top: 1.25rem;
+  }
+
+  .mini-chart {
+    padding: 1rem;
+  }
+  .chart-area {
+    position: relative;
+    height: 210px;
+    border-left: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(to top, rgba(148, 163, 184, 0.18) 1px, transparent 1px) 0 0 / 100% 25%,
+      rgba(2, 6, 23, 0.32);
+    overflow: hidden;
+  }
+  .bar {
+    position: absolute;
+    bottom: 0;
+    width: 8%;
+    background: var(--green);
+    opacity: 0.82;
+  }
+  .bar.pred {
+    background: var(--blue);
+    opacity: 0.64;
+  }
+  .b1 { left: 5%; height: 48%; }
+  .b2 { left: 15%; height: 58%; }
+  .b3 { left: 25%; height: 42%; }
+  .b4 { left: 35%; height: 72%; }
+  .b5 { left: 45%; height: 64%; }
+  .b6 { left: 55%; height: 77%; }
+  .b7 { left: 65%; height: 69%; }
+  .b8 { left: 75%; height: 84%; }
+  .b9 { left: 85%; height: 61%; }
+  .legend {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.85rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  .dot {
+    display: inline-block;
+    width: 0.65rem;
+    height: 0.65rem;
+    margin-right: 0.35rem;
+    background: var(--green);
+  }
+  .dot.pred {
+    background: var(--blue);
+  }
+
+  .principle {
+    border-left: 5px solid var(--blue);
+    padding: clamp(1.4rem, 3vw, 2rem);
+  }
+  .principle p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .architecture-grid,
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+    .metric-grid,
+    .card-grid.three,
+    .proof-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .decision-hero {
+      padding-top: 5rem;
+    }
+    .metric-grid,
+    .card-grid.three,
+    .proof-grid,
+    .answer-grid,
+    .diagram {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
