@@ -8,7 +8,7 @@ const description =
 
 <Layout title={title} description={description}>
   <main class="decision-page">
-    <section class="decision-hero">
+    <section class="decision-hero reveal">
       <div class="decision-shell">
         <a href="/#projects" class="back-link">← Volver a proyectos</a>
 
@@ -21,6 +21,11 @@ const description =
               opera localmente, reduce costos de infraestructura y usa LLMs como capa de
               interpretación, no como fuente de verdad.
             </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#arquitectura">Ver arquitectura</a>
+              <a class="btn btn-secondary" href="#orquestacion-ia">Cómo funciona la IA</a>
+            </div>
 
             <div class="proof-grid" aria-label="Indicadores principales del proyecto">
               <div class="proof-card">
@@ -74,6 +79,12 @@ const description =
                     <strong>96,478</strong>
                   </div>
                 </div>
+
+                <ul class="status-list" aria-label="Flujo de ejecución de agentes">
+                  <li>SQL ejecutado con éxito</li>
+                  <li>Análisis de features completado</li>
+                  <li>Inferencia de modelo generada</li>
+                </ul>
               </div>
             </div>
           </aside>
@@ -81,7 +92,7 @@ const description =
       </div>
     </section>
 
-    <section class="decision-block">
+    <section class="decision-block reveal">
       <div class="decision-shell">
         <div class="section-head">
           <span class="kicker">La problemática</span>
@@ -119,7 +130,7 @@ const description =
       </div>
     </section>
 
-    <section class="decision-block band">
+    <section class="decision-block band reveal" id="arquitectura">
       <div class="decision-shell">
         <div class="section-head">
           <span class="kicker">La solución</span>
@@ -151,10 +162,20 @@ const description =
             <div class="node ai"><strong>LLM</strong><span>Narrativa ejecutiva</span></div>
           </div>
         </div>
+
+        <div class="flow-strip" aria-label="Flujo simplificado de la arquitectura">
+          <div class="flow-box">Datos transaccionales</div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-box">Data Lake<br />Raw / Core / Features</div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-box">SQLite Warehouse</div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-box">Power BI + ML + Agentes</div>
+        </div>
       </div>
     </section>
 
-    <section class="decision-block">
+    <section class="decision-block reveal">
       <div class="decision-shell">
         <div class="section-head">
           <span class="kicker">Impacto medible</span>
@@ -174,7 +195,7 @@ const description =
       </div>
     </section>
 
-    <section class="decision-block">
+    <section class="decision-block reveal">
       <div class="decision-shell two-col">
         <div>
           <span class="kicker">Bajo costo operativo</span>
@@ -195,7 +216,7 @@ const description =
       </div>
     </section>
 
-    <section class="decision-block band">
+    <section class="decision-block band reveal">
       <div class="decision-shell architecture-grid">
         <div>
           <span class="kicker">Evidencia técnica</span>
@@ -233,7 +254,40 @@ const description =
       </div>
     </section>
 
-    <section class="decision-block">
+    <section class="decision-block reveal" id="orquestacion-ia">
+      <div class="decision-shell">
+        <div class="section-head">
+          <span class="kicker">Orquestación IA</span>
+          <h2>Reduciendo alucinaciones con agentes analíticos.</h2>
+          <p>
+            El LLM no responde primero. DecisionOS ejecuta consultas, análisis y modelos antes de
+            generar narrativa ejecutiva. Esa secuencia impone trazabilidad y evita respuestas
+            convincentes sin evidencia.
+          </p>
+        </div>
+
+        <ol class="timeline" aria-label="Pipeline de respuesta en lenguaje natural">
+          <li class="timeline-item">
+            <h3>La persona usuaria plantea una pregunta de negocio</h3>
+            <p>Ejemplo: ¿Qué clientes tienen mayor riesgo de churn y menor valor futuro?</p>
+          </li>
+          <li class="timeline-item">
+            <h3>El agente interpreta intención y enrutamiento</h3>
+            <p>La capa de orquestación decide si resolver por SQL, features o modelos predictivos.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>Se ejecutan SQL, features e inferencia</h3>
+            <p>La respuesta se construye con resultados reales del warehouse y del pipeline de ML.</p>
+          </li>
+          <li class="timeline-item">
+            <h3>El LLM redacta explicación ejecutiva</h3>
+            <p>La narrativa solo contextualiza evidencia disponible y explicita límites de datos.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="decision-block reveal">
       <div class="decision-shell">
         <div class="principle">
           <span class="kicker">Principio de diseño</span>
@@ -254,6 +308,8 @@ const description =
 </Layout>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Sora:wght@600;700;800&display=swap');
+
   .decision-page {
     --surface: rgba(15, 23, 42, 0.72);
     --surface-strong: rgba(15, 23, 42, 0.94);
@@ -264,7 +320,10 @@ const description =
     --gold: #f59e0b;
     --red: #f87171;
     color: var(--text);
+    font-family: 'Manrope', 'Segoe UI', Tahoma, sans-serif;
     background:
+      linear-gradient(120deg, rgba(34, 197, 94, 0.04), transparent 38%),
+      linear-gradient(300deg, rgba(56, 189, 248, 0.05), transparent 42%),
       radial-gradient(circle at 12% 5%, rgba(34, 197, 94, 0.1), transparent 28rem),
       radial-gradient(circle at 92% 8%, rgba(56, 189, 248, 0.12), transparent 30rem),
       var(--bg);
@@ -289,6 +348,18 @@ const description =
 
   .decision-hero {
     padding: 7rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .decision-hero::before {
+    content: '';
+    position: absolute;
+    width: 32rem;
+    height: 32rem;
+    right: -8rem;
+    top: -10rem;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 70%);
+    pointer-events: none;
   }
   .hero-grid,
   .architecture-grid,
@@ -316,6 +387,7 @@ const description =
     margin-top: 0;
   }
   h1 {
+    font-family: 'Sora', 'Segoe UI', Tahoma, sans-serif;
     max-width: 760px;
     margin: 1rem 0;
     font-size: clamp(2.6rem, 5vw, 5rem);
@@ -323,12 +395,14 @@ const description =
     letter-spacing: 0;
   }
   h2 {
+    font-family: 'Sora', 'Segoe UI', Tahoma, sans-serif;
     margin: 0.5rem 0 0.9rem;
     font-size: clamp(1.8rem, 3vw, 3rem);
     line-height: 1.08;
     letter-spacing: 0;
   }
   h3 {
+    font-family: 'Sora', 'Segoe UI', Tahoma, sans-serif;
     margin-bottom: 0.5rem;
     font-size: 1.05rem;
   }
@@ -339,6 +413,37 @@ const description =
   }
   .lead {
     font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 1.35rem 0 1.25rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.7rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 800;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(56, 189, 248, 0.38));
+    color: var(--text);
+    border-color: rgba(56, 189, 248, 0.35);
+  }
+  .btn-secondary {
+    background: rgba(2, 6, 23, 0.35);
+    color: var(--text-muted);
+    border-color: var(--line);
   }
 
   .proof-grid,
@@ -355,6 +460,7 @@ const description =
   .analyst-panel,
   .mini-chart,
   .principle {
+    border-radius: 1rem;
     border: 1px solid var(--line);
     background: var(--surface);
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
@@ -430,6 +536,26 @@ const description =
     padding: 0.8rem;
     background: rgba(255, 255, 255, 0.04);
   }
+  .status-list {
+    margin: 0.9rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+  .status-list li {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .status-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 900;
+  }
 
   .decision-block {
     padding: 4.5rem 0;
@@ -445,6 +571,15 @@ const description =
   }
   .info-card {
     padding: 1.25rem;
+    transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+  }
+  .info-card:hover,
+  .metric-card:hover,
+  .flow-box:hover,
+  .timeline-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.35);
+    background: rgba(15, 23, 42, 0.92);
   }
   .info-card p {
     margin-bottom: 0;
@@ -509,8 +644,39 @@ const description =
     font-size: 0.78rem;
   }
 
+  .flow-strip {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    background: rgba(2, 6, 23, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .flow-box {
+    flex: 1;
+    min-width: 145px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 0.7rem;
+    font-size: 0.86rem;
+    text-align: center;
+    line-height: 1.45;
+    transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+  }
+  .flow-arrow {
+    color: var(--blue);
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
   .metric-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .metric-card {
+    transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
   }
   .feature-list {
     display: grid;
@@ -551,6 +717,8 @@ const description =
     width: 8%;
     background: var(--green);
     opacity: 0.82;
+    transform-origin: center bottom;
+    animation: barPulse 5s ease-in-out infinite;
   }
   .bar.pred {
     background: var(--blue);
@@ -565,6 +733,16 @@ const description =
   .b7 { left: 65%; height: 69%; }
   .b8 { left: 75%; height: 84%; }
   .b9 { left: 85%; height: 61%; }
+  .b2,
+  .b5,
+  .b8 {
+    animation-delay: 0.2s;
+  }
+  .b3,
+  .b6,
+  .b9 {
+    animation-delay: 0.4s;
+  }
   .legend {
     display: flex;
     gap: 1rem;
@@ -591,6 +769,90 @@ const description =
     margin-bottom: 0;
   }
 
+  .timeline {
+    list-style: none;
+    margin: 0.8rem 0 0;
+    padding: 0 0 0 1.2rem;
+    border-left: 1px solid rgba(56, 189, 248, 0.4);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.55rem;
+    top: 1.15rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
+  }
+  .timeline-item h3 {
+    margin-bottom: 0.45rem;
+  }
+  .timeline-item p {
+    margin-bottom: 0;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: riseIn 0.7s ease forwards;
+  }
+  .decision-page > .reveal:nth-of-type(1) { animation-delay: 0.04s; }
+  .decision-page > .reveal:nth-of-type(2) { animation-delay: 0.1s; }
+  .decision-page > .reveal:nth-of-type(3) { animation-delay: 0.16s; }
+  .decision-page > .reveal:nth-of-type(4) { animation-delay: 0.22s; }
+  .decision-page > .reveal:nth-of-type(5) { animation-delay: 0.28s; }
+  .decision-page > .reveal:nth-of-type(6) { animation-delay: 0.34s; }
+  .decision-page > .reveal:nth-of-type(7) { animation-delay: 0.4s; }
+  .decision-page > .reveal:nth-of-type(8) { animation-delay: 0.46s; }
+
+  @keyframes riseIn {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes barPulse {
+    0%,
+    100% {
+      transform: scaleY(0.97);
+      opacity: 0.75;
+    }
+    50% {
+      transform: scaleY(1.02);
+      opacity: 0.92;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .bar,
+    .btn,
+    .info-card,
+    .metric-card,
+    .flow-box,
+    .timeline-item {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+
   @media (max-width: 900px) {
     .hero-grid,
     .architecture-grid,
@@ -614,6 +876,14 @@ const description =
     .answer-grid,
     .diagram {
       grid-template-columns: 1fr;
+    }
+    .flow-strip {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .flow-arrow {
+      transform: rotate(90deg);
+      align-self: center;
     }
   }
 </style>
