@@ -1,69 +1,74 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const title = 'Mantenimiento Predictivo AI | Douglas Adon';
+const title = 'Predictive Maintenance AI | Decision Optimization';
 const description =
-  'Caso de proyecto: arquitectura de AI para Predictive Maintenance orientada a reducir downtime y mejorar la confiabilidad operacional.';
+  'Caso de proyecto: Predictive Maintenance AI orientado a optimizar decisiones operacionales mediante analisis de costo entre False Positives y False Negatives.';
 ---
 
 <Layout title={title} description={description}>
-  <main class="pm-page">
+  <main id="main-content" class="pm-page">
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <a href="/#projects" class="back-link">← Volver a proyectos</a>
+          <a href="/#projects" class="back-link">Volver a proyectos</a>
 
-          <div class="badge">INDUSTRIAL AI • PREDICTIVE MAINTENANCE</div>
+          <div class="badge">MACHINE LEARNING - BUSINESS OPTIMIZATION</div>
 
-          <h1>Prediciendo fallas antes de que detengan las operaciones.</h1>
+          <h1>Machine Learning orientado a decisiones, no solo a predicciones.</h1>
 
           <p>
-            Arquitectura de Predictive Maintenance impulsada por AI, diseñada para reducir downtime,
-            optimizar la confiabilidad operacional y transformar datos industriales en decisiones
-            proactivas.
+            Sistema de Predictive Maintenance diseñado para minimizar el impacto económico de los
+            errores del modelo, optimizando decisiones operacionales mediante análisis de costo entre
+            False Positives y False Negatives.
           </p>
 
           <div class="btn-group">
-            <a href="#impacto" class="btn btn-primary">Ver Dashboard</a>
-            <a href="#arquitectura" class="btn btn-secondary">Explorar arquitectura</a>
+            <a href="#resultado" class="btn btn-primary">Ver Dashboard</a>
+            <a href="#model-selection" class="btn btn-secondary">Explorar Arquitectura</a>
           </div>
 
           <div class="stats">
             <div class="stat-card">
-              <span>Machine Learning</span>
-              <h3>Predictive AI</h3>
+              <span>Enfoque</span>
+              <h3>Business ML</h3>
             </div>
 
             <div class="stat-card">
-              <span>Analytics</span>
-              <h3>Real-time Insights</h3>
+              <span>Objetivo</span>
+              <h3>Cost Optimization</h3>
             </div>
 
             <div class="stat-card">
-              <span>Enfoque industrial</span>
-              <h3>Confiabilidad</h3>
+              <span>Industria</span>
+              <h3>Industrial AI</h3>
             </div>
           </div>
         </div>
 
         <div class="dashboard-card">
           <div class="dashboard-top">
-            <span>Monitoreo industrial</span>
-            <span>Predictive Engine</span>
+            <span>Decision Engine</span>
+            <span>Operational Risk</span>
           </div>
 
           <div class="dashboard-box">
-            <h3>Probabilidad de falla detectada</h3>
+            <h3>Riesgo operacional detectado</h3>
 
             <p>
-              Los patrones de vibración y temperatura del equipo indican un riesgo elevado de falla en
-              el próximo ciclo operacional.
+              El sistema identificó una posible falla crítica y evaluó el impacto económico esperado
+              antes de recomendar intervención.
             </p>
 
             <div class="dashboard-grid">
               <div class="mini-box">
-                <span>NIVEL DE RIESGO</span>
+                <span>FAILURE RISK</span>
                 <h4>87%</h4>
+              </div>
+
+              <div class="mini-box">
+                <span>ESTIMATED LOSS</span>
+                <h4>$4K</h4>
               </div>
 
               <div class="mini-box">
@@ -72,13 +77,8 @@ const description =
               </div>
 
               <div class="mini-box">
-                <span>ANOMALÍAS</span>
-                <h4>14</h4>
-              </div>
-
-              <div class="mini-box">
-                <span>UPTIME</span>
-                <h4>98.4%</h4>
+                <span>MODEL STATUS</span>
+                <h4>ACTIVE</h4>
               </div>
             </div>
           </div>
@@ -88,167 +88,186 @@ const description =
 
     <section>
       <div class="container">
-        <div class="badge">Desafíos operacionales</div>
+        <div class="badge">Problema de Negocio</div>
 
-        <h2 class="section-title">El mantenimiento reactivo genera ineficiencia operacional.</h2>
+        <h2 class="section-title">
+          El verdadero problema no era detectar fallas. Era minimizar pérdidas operacionales.
+        </h2>
 
         <p class="section-sub">
-          Las estrategias tradicionales de mantenimiento suelen depender de calendarios fijos o
-          intervenciones reactivas, lo que incrementa el riesgo operacional, el downtime y los costos
-          de mantenimiento.
+          La mayoría de modelos de Machine Learning se optimizan para Accuracy o F1 Score. En entornos
+          industriales eso puede ser insuficiente. Cada error del modelo tiene un impacto económico
+          distinto sobre la operación.
         </p>
 
         <div class="grid-3">
           <div class="card">
             <h3>Downtime inesperado</h3>
-            <p>Las fallas de equipos interrumpen las operaciones y generan pérdidas de producción.</p>
+            <p>Un False Negative puede detener producción y generar pérdidas críticas.</p>
           </div>
 
           <div class="card">
-            <h3>Mantenimiento reactivo</h3>
-            <p>
-              Las decisiones de mantenimiento se toman con frecuencia después de que aparecen los
-              problemas operacionales.
-            </p>
+            <h3>Mantenimiento innecesario</h3>
+            <p>Un False Positive genera intervenciones preventivas sin necesidad real.</p>
           </div>
 
           <div class="card">
-            <h3>Costos operacionales</h3>
-            <p>
-              Las estrategias de mantenimiento ineficientes aumentan los gastos de reparación y
-              reemplazo.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="arquitectura">
-      <div class="container">
-        <div class="badge">Arquitectura del sistema</div>
-
-        <h2 class="section-title">De señales industriales a decisiones predictivas.</h2>
-
-        <p class="section-sub">
-          La solución combina análisis industrial, Feature Engineering y Machine Learning para
-          anticipar fallas antes de que ocurra impacto operacional.
-        </p>
-
-        <div class="pipeline">
-          <div class="flow">
-            <div class="flow-box">Datos industriales</div>
-            <div class="arrow">→</div>
-            <div class="flow-box">Feature Engineering</div>
-            <div class="arrow">→</div>
-            <div class="flow-box">ML Prediction</div>
-            <div class="arrow">→</div>
-            <div class="flow-box">Dashboard & Alerts</div>
+            <h3>Métricas sin contexto</h3>
+            <p>El mejor modelo estadístico no siempre es la mejor decisión de negocio.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container split">
-        <div>
-          <div class="badge">Machine Learning</div>
+      <div class="container">
+        <div class="badge">Cost of Wrong Decisions</div>
 
-          <h2 class="section-title">Modelos predictivos diseñados para confiabilidad industrial.</h2>
+        <h2 class="section-title">Más allá del F1: selección por impacto económico.</h2>
 
-          <p>
-            El sistema analiza patrones operacionales para detectar anomalías, identificar condiciones
-            de riesgo y apoyar decisiones de mantenimiento proactivo.
-          </p>
-        </div>
+        <p class="section-sub">
+          La métrica principal no fue Accuracy ni F1. El criterio de selección fue el costo total
+          generado por cada modelo sobre la operación industrial.
+        </p>
 
-        <div class="feature-list">
-          <div class="feature">
-            <h4>Anomaly Detection</h4>
+        <div class="grid-2">
+          <div class="cost-card fp">
+            <span>False Positive</span>
+
+            <div class="cost">$200</div>
+
             <p>
-              Identificación de comportamiento operacional anormal y patrones de degradación de
-              equipos.
+              La máquina funciona correctamente, pero el modelo genera una alerta preventiva
+              innecesaria.
             </p>
           </div>
 
-          <div class="feature">
-            <h4>Failure Prediction</h4>
-            <p>
-              Modelos de Machine Learning estiman la probabilidad de falla del equipo antes de una
-              avería.
-            </p>
-          </div>
+          <div class="cost-card fn">
+            <span>False Negative</span>
 
-          <div class="feature">
-            <h4>Operational Analytics</h4>
-            <p>
-              KPIs en Real-time brindan visibilidad del desempeño de equipos y su nivel de
-              confiabilidad.
-            </p>
-          </div>
+            <div class="cost">$4,000</div>
 
-          <div class="feature">
-            <h4>Decision Support</h4>
             <p>
-              Los Insights habilitan la priorización del mantenimiento y una mejor asignación de
-              recursos.
+              El modelo no detecta una falla real y la operación termina enfrentando downtime y
+              reparación de emergencia.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="impacto">
+    <section id="model-selection">
       <div class="container">
-        <div class="badge">Impacto de negocio</div>
+        <div class="badge">Model Selection</div>
 
-        <h2 class="section-title">Industrial AI enfocado en eficiencia operacional.</h2>
+        <h2 class="section-title">
+          El mejor modelo fue el que minimizó el costo total del negocio.
+        </h2>
+
+        <p class="section-sub">
+          La selección final no estuvo basada únicamente en métricas tradicionales, sino en el impacto
+          económico esperado sobre la operación.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Costo Validación</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+                <th>False Negatives</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="highlight">
+                <td>Random Forest <span class="tag">Seleccionado</span></td>
+                <td>$53,200</td>
+                <td>0.867</td>
+                <td>0.74</td>
+                <td>9</td>
+              </tr>
+
+              <tr>
+                <td>Gradient Boosting</td>
+                <td>$57,600</td>
+                <td>0.842</td>
+                <td>0.71</td>
+                <td>11</td>
+              </tr>
+
+              <tr>
+                <td>Easy Ensemble</td>
+                <td>$60,400</td>
+                <td>0.891</td>
+                <td>0.65</td>
+                <td>7</td>
+              </tr>
+
+              <tr>
+                <td>MLP Classifier</td>
+                <td>$64,800</td>
+                <td>0.818</td>
+                <td>0.68</td>
+                <td>13</td>
+              </tr>
+
+              <tr>
+                <td>Logistic Regression</td>
+                <td>$71,200</td>
+                <td>0.793</td>
+                <td>0.60</td>
+                <td>14</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="insight">
+          <h3>Insight ejecutivo</h3>
+
+          <p>
+            Aunque Easy Ensemble obtuvo mejor Recall, Random Forest logró el menor costo operacional
+            total tanto en validación como en TEST. El proyecto demuestra que el mejor modelo no
+            siempre es el de mejor métrica, sino el que genera la mejor decisión económica para el
+            negocio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultado">
+      <div class="container">
+        <div class="badge">Resultado Final</div>
+
+        <h2 class="section-title">Modelo seleccionado: Random Forest</h2>
+
+        <p class="section-sub">
+          Evaluado bajo la misma función de costo utilizada durante validación, manteniendo
+          consistencia entre performance analítico e impacto económico.
+        </p>
 
         <div class="impact-grid">
           <div class="impact">
+            <h2>$53K</h2>
+            <p>Costo Total TEST</p>
+          </div>
+
+          <div class="impact">
+            <h2>86.8%</h2>
+            <p>Recall TEST</p>
+          </div>
+
+          <div class="impact">
+            <h2>9</h2>
+            <p>False Negatives</p>
+          </div>
+
+          <div class="impact">
             <h2>↓</h2>
-            <p>Reducción de downtime</p>
-          </div>
-
-          <div class="impact">
-            <h2>↑</h2>
-            <p>Confiabilidad de equipos</p>
-          </div>
-
-          <div class="impact">
-            <h2>↓</h2>
-            <p>Costos de mantenimiento</p>
-          </div>
-
-          <div class="impact">
-            <h2>↑</h2>
-            <p>Visibilidad operacional</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="badge">Technology Stack</div>
-
-        <h2 class="section-title">Tecnologías detrás de la solución.</h2>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Data & Engineering</h3>
-            <p>Python, SQL, Pandas, NumPy y pipelines de Feature Engineering.</p>
-          </div>
-
-          <div class="card">
-            <h3>Machine Learning</h3>
-            <p>
-              Scikit-learn, modelos predictivos, Anomaly Detection y workflows de clasificación.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Visualization</h3>
-            <p>Dashboards en Power BI para monitoreo operacional y reporting ejecutivo.</p>
+            <p>Riesgo Operacional</p>
           </div>
         </div>
       </div>
@@ -256,25 +275,25 @@ const description =
 
     <footer>
       <div class="container">
-        <h2>Inteligencia industrial.</h2>
+        <h2>Decision-Oriented AI.</h2>
 
         <p>
-          Predictive Maintenance transforma datos operacionales en decisiones proactivas, reduciendo
-          downtime y mejorando la confiabilidad industrial mediante analítica impulsada por AI.
+          El verdadero valor del Machine Learning no está en maximizar métricas, sino en optimizar
+          decisiones con impacto económico real para el negocio.
         </p>
 
-        <div class="btn-group" style="justify-content:center;">
+        <div class="btn-group footer-actions">
           <a
             href="https://github.com/DouglasAdonCa"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-primary">Repositorio en GitHub</a
+            class="btn btn-primary">GitHub Repository</a
           >
           <a
             href="https://www.linkedin.com/in/douglas-adon-capellan-77a988103/"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary">Proyecto en LinkedIn</a
+            class="btn btn-secondary">LinkedIn Project</a
           >
         </div>
       </div>
@@ -283,27 +302,27 @@ const description =
 </Layout>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   .pm-page {
-    font-family: Inter, Arial, sans-serif;
-    background: #020617;
-    color: #e2e8f0;
-    overflow-x: hidden;
-  }
-
-  :root {
-    --primary: #38bdf8;
+    --primary: #2563eb;
     --secondary: #0f172a;
     --card: #111827;
     --border: #1e293b;
     --text: #cbd5e1;
     --muted: #94a3b8;
-    --gradient: linear-gradient(135deg, #38bdf8, #22c55e);
+    --green: #10b981;
+    --red: #ef4444;
+    --orange: #f59e0b;
+    --gradient: linear-gradient(135deg, #2563eb, #06b6d4);
+
+    min-height: 100vh;
+    background: #020617;
+    color: #e2e8f0;
+    font-family: Inter, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  .pm-page * {
+    box-sizing: border-box;
   }
 
   .container {
@@ -333,7 +352,14 @@ const description =
     color: #93c5fd;
     text-decoration: none;
     font-size: 0.95rem;
+    font-weight: 600;
   }
+
+  .back-link::before {
+    content: '<-';
+    margin-right: 8px;
+  }
+
   .back-link:hover {
     color: #dbeafe;
   }
@@ -342,11 +368,11 @@ const description =
     display: inline-block;
     padding: 8px 18px;
     border-radius: 50px;
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    color: var(--primary);
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    color: #60a5fa;
     font-size: 14px;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     letter-spacing: 1px;
   }
 
@@ -363,9 +389,9 @@ const description =
     position: absolute;
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12), transparent 70%);
     top: -250px;
-    right: -200px;
+    right: -150px;
   }
 
   .hero-grid {
@@ -373,19 +399,21 @@ const description =
     grid-template-columns: 1.1fr 0.9fr;
     gap: 60px;
     align-items: center;
+    position: relative;
+    z-index: 1;
   }
 
   .hero h1 {
-    font-size: 78px;
-    font-weight: 800;
+    max-width: 920px;
     margin-bottom: 30px;
-    max-width: 850px;
+    font-size: clamp(3.25rem, 6vw, 5.125rem);
+    font-weight: 800;
   }
 
   .hero p {
-    font-size: 20px;
-    max-width: 700px;
+    max-width: 760px;
     margin-bottom: 40px;
+    font-size: 20px;
   }
 
   .btn-group {
@@ -435,40 +463,39 @@ const description =
     color: var(--muted);
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
   .stat-card h3 {
-    font-size: 38px;
     margin-top: 10px;
+    font-size: 32px;
   }
 
   .dashboard-card {
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(15, 23, 42, 0.75);
     border: 1px solid var(--border);
-    border-radius: 28px;
+    border-radius: 30px;
     padding: 30px;
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(20px);
   }
 
   .dashboard-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    gap: 16px;
     color: #94a3b8;
+    margin-bottom: 24px;
     font-size: 14px;
   }
 
   .dashboard-box {
     background: #020617;
     border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 28px;
   }
 
   .dashboard-box h3 {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     font-size: 30px;
   }
 
@@ -476,7 +503,7 @@ const description =
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .mini-box {
@@ -493,19 +520,25 @@ const description =
 
   .mini-box h4 {
     margin-top: 10px;
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .section-title {
-    font-size: 58px;
+    max-width: 950px;
     margin-bottom: 25px;
-    max-width: 900px;
+    font-size: clamp(2.625rem, 5vw, 3.625rem);
   }
 
   .section-sub {
-    font-size: 18px;
-    max-width: 800px;
+    max-width: 820px;
     margin-bottom: 70px;
+    font-size: 18px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .grid-3 {
@@ -519,69 +552,107 @@ const description =
     border: 1px solid var(--border);
     border-radius: 24px;
     padding: 35px;
-    transition: 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(56, 189, 248, 0.4);
   }
 
   .card h3 {
-    font-size: 28px;
     margin-bottom: 20px;
+    font-size: 28px;
   }
 
-  .pipeline {
-    background: #0f172a;
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    padding: 60px;
-    margin-top: 50px;
+  .cost-card {
+    border-radius: 28px;
+    padding: 40px;
   }
 
-  .flow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  .fp {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.3);
   }
 
-  .flow-box {
-    flex: 1;
-    min-width: 180px;
-    background: #020617;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
+  .fn {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
   }
 
-  .arrow {
-    color: var(--primary);
-    font-size: 32px;
+  .cost-card span {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 700;
   }
 
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+  .fp span,
+  .fp .cost {
+    color: var(--orange);
   }
 
-  .feature-list {
+  .fn span,
+  .fn .cost {
+    color: var(--red);
+  }
+
+  .cost {
+    margin: 20px 0;
+    font-size: 56px;
+    font-weight: 800;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
     margin-top: 40px;
   }
 
-  .feature {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
   }
 
-  .feature h4 {
-    margin-bottom: 10px;
-    font-size: 22px;
+  th {
+    text-align: left;
+    padding: 22px;
+    background: #111827;
+    color: white;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 22px;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  tr.highlight {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 4px solid var(--green);
+  }
+
+  .tag {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    background: var(--green);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  .insight {
+    margin-top: 35px;
+    background: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 35px;
+  }
+
+  .insight h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
   }
 
   .impact-grid {
@@ -600,41 +671,50 @@ const description =
   }
 
   .impact h2 {
-    font-size: 46px;
     margin-bottom: 10px;
     background: var(--gradient);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-size: 44px;
   }
 
   footer {
     padding: 100px 0;
-    text-align: center;
     border-top: 1px solid var(--border);
+    text-align: center;
     margin-top: 80px;
   }
 
   footer h2 {
-    font-size: 56px;
     margin-bottom: 20px;
+    font-size: 56px;
   }
 
   footer p {
-    max-width: 750px;
-    margin: auto;
-    margin-bottom: 40px;
+    max-width: 760px;
+    margin: 0 auto 40px;
+  }
+
+  .footer-actions {
+    justify-content: center;
+    margin-bottom: 0;
   }
 
   @media (max-width: 1000px) {
     .hero-grid,
-    .split,
+    .grid-2,
     .grid-3,
     .impact-grid {
       grid-template-columns: 1fr;
     }
 
+    section {
+      padding: 86px 0;
+    }
+
     .hero h1 {
-      font-size: 52px;
+      font-size: 54px;
     }
 
     .section-title {
@@ -644,13 +724,48 @@ const description =
     .stats {
       grid-template-columns: 1fr;
     }
+  }
 
-    .flow {
-      flex-direction: column;
+  @media (max-width: 640px) {
+    .container {
+      width: min(92%, 1300px);
     }
 
-    .arrow {
-      transform: rotate(90deg);
+    .hero {
+      min-height: auto;
+      padding-top: 52px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+    }
+
+    .hero p,
+    .section-sub {
+      font-size: 16px;
+    }
+
+    .dashboard-card,
+    .dashboard-box,
+    .card,
+    .cost-card,
+    .insight,
+    .impact {
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    footer h2 {
+      font-size: 40px;
     }
   }
 </style>
