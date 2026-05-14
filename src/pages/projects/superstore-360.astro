@@ -4,9 +4,9 @@ import { existsSync, readdirSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { withBase } from '../../lib/assetPath';
 
-const title = 'Superstore 360 | Business Intelligence Analytics';
+const title = 'Retail Decision Intelligence | Business Intelligence Analytics';
 const description =
-  'Caso de proyecto: solucion end-to-end de Business Intelligence para retail, enfocada en visibilidad ejecutiva, KPI Analytics y Decision Support.';
+  'Caso de proyecto: Retail Decision Intelligence para detectar pérdidas ocultas, optimizar la estrategia comercial y transformar crecimiento en rentabilidad sostenible.';
 
 const dashboardDir = join(process.cwd(), 'public', 'images', 'projects', 'superstore-360');
 const rootProjectsDir = join(process.cwd(), 'public', 'images', 'projects');
@@ -44,78 +44,78 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
 ---
 
 <Layout title={title} description={description}>
-  <main class="s360-page">
+  <main id="main-content" class="rdi-page">
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <a href="/#projects" class="back-link"><span aria-hidden="true">&larr;</span> Volver a proyectos</a>
 
-          <div class="badge">BUSINESS INTELLIGENCE • RETAIL ANALYTICS</div>
+          <div class="badge">RETAIL ANALYTICS • BUSINESS INTELLIGENCE</div>
 
-          <h1>Descubriendo la historia oculta detras de los datos de retail.</h1>
+          <h1>El negocio no tenía un problema de ventas. Tenía un problema de estrategia.</h1>
 
           <p>
-            Solucion end-to-end de Business Intelligence disenada para transformar datos
-            transaccionales de retail en Operational Insights, visibilidad estrategica y Executive
-            Decision-Making.
+            Proyecto de Retail Decision Intelligence enfocado en detectar pérdidas ocultas generadas
+            por descuentos agresivos, demostrando cómo un crecimiento en revenue puede destruir
+            rentabilidad cuando la estrategia comercial no está alineada al valor.
           </p>
 
           <div class="btn-group">
             <a href="#galeria" class="btn btn-primary">Ver Dashboard</a>
-            <a href="#arquitectura" class="btn btn-secondary">Explorar Analytics</a>
+            <a href="#analisis" class="btn btn-secondary">Explorar Análisis</a>
           </div>
 
           <div class="stats">
             <div class="stat-card">
-              <span>Business Intelligence</span>
-              <h3>360 Visibility</h3>
+              <span>Revenue Total</span>
+              <h3>$2.3M</h3>
             </div>
 
             <div class="stat-card">
-              <span>Analytics</span>
-              <h3>Executive KPIs</h3>
+              <span>Pérdida Detectada</span>
+              <h3>$156K</h3>
             </div>
 
             <div class="stat-card">
-              <span>Enfoque retail</span>
-              <h3>Decision Insights</h3>
+              <span>Margen Neto</span>
+              <h3>12.47%</h3>
             </div>
           </div>
         </div>
 
         <div class="dashboard-card">
           <div class="dashboard-top">
-            <span>Retail Analytics Dashboard</span>
-            <span>Executive View</span>
+            <span>Retail Decision Engine</span>
+            <span>Commercial Intelligence</span>
           </div>
 
           <div class="dashboard-box">
-            <h3>Tendencia de rentabilidad identificada</h3>
+            <h3>Crecimiento sin rentabilidad</h3>
 
             <p>
-              El modelo analitico detecto una caida de rentabilidad en segmentos de producto
-              seleccionados, a pesar del crecimiento sostenido de ventas en multiples regiones.
+              El análisis identificó que los picos de ventas coincidían con aumentos de pérdidas
+              provocadas por descuentos que no generaban incremento real en demanda.
             </p>
 
             <div class="dashboard-grid">
               <div class="mini-box">
-                <span>REVENUE</span>
-                <h4>$12.4M</h4>
+                <span>REVENUE GROWTH</span>
+                <h4>+52%</h4>
               </div>
 
               <div class="mini-box">
-                <span>PROFIT</span>
-                <h4>18.7%</h4>
+                <span>PROFIT LOSS</span>
+                <h4>$156K</h4>
               </div>
 
               <div class="mini-box">
-                <span>ORDERS</span>
-                <h4>54K</h4>
+                <span>LOSS SALES</span>
+                <h4>19%</h4>
               </div>
 
               <div class="mini-box">
-                <span>REGIONS</span>
-                <h4>4</h4>
+                <span>DEMAND</span>
+                <h4>INELASTIC</h4>
               </div>
             </div>
           </div>
@@ -123,143 +123,170 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
       </div>
     </section>
 
-    <section>
+    <section id="analisis">
       <div class="container">
-        <div class="badge">Business Challenge</div>
+        <div class="badge">Problema de Negocio</div>
 
-        <h2 class="section-title">
-          Las empresas de retail generan grandes volumenes de datos pero poca visibilidad operacional.
-        </h2>
+        <h2 class="section-title">Vender más no significa ganar más.</h2>
 
         <p class="section-sub">
-          Los sistemas transaccionales capturan ventas, clientes y operaciones de forma continua, pero
-          sin una capa analitica estructurada se vuelve dificil identificar patrones, oportunidades y
-          riesgos de negocio.
+          Aunque el negocio incrementó sus ingresos un 52% entre 2011 y 2014, el crecimiento no logró
+          traducirse en valor real. El análisis reveló una estrategia comercial enfocada en volumen,
+          pero desconectada de rentabilidad.
         </p>
 
         <div class="grid-3">
           <div class="card">
-            <h3>Datos fragmentados</h3>
+            <div class="big-number">19%</div>
+            <h3>Ventas con pérdida</h3>
             <p>
-              Ventas, clientes y metricas operacionales suelen quedar aislados en sistemas diferentes.
+              Casi una quinta parte de las transacciones destruían valor debido a descuentos
+              excesivos.
             </p>
           </div>
 
           <div class="card">
-            <h3>Visibilidad limitada</h3>
-            <p>
-              Las organizaciones tienen dificultad para entender drivers de rentabilidad y tendencias
-              operacionales.
-            </p>
+            <div class="big-number">9%</div>
+            <h3>Productos clave</h3>
+            <p>Solo una pequeña parte del portafolio generaba la mayoría de las utilidades.</p>
           </div>
 
           <div class="card">
-            <h3>Decisiones reactivas</h3>
-            <p>
-              Las decisiones de negocio se toman con frecuencia sin contexto analitico ni Predictive
-              Insights.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="arquitectura">
-      <div class="container">
-        <div class="badge">Analytics Architecture</div>
-
-        <h2 class="section-title">De ventas transaccionales a inteligencia estrategica de negocio.</h2>
-
-        <p class="section-sub">
-          La solucion integra Data Transformation, KPI Modeling y Visual Analytics en un ecosistema
-          centralizado de Decision Support.
-        </p>
-
-        <div class="pipeline">
-          <div class="flow">
-            <div class="flow-box">Retail Transactions</div>
-            <div class="arrow">&rarr;</div>
-            <div class="flow-box">Data Modeling</div>
-            <div class="arrow">&rarr;</div>
-            <div class="flow-box">KPI Analytics</div>
-            <div class="arrow">&rarr;</div>
-            <div class="flow-box">Executive Dashboards</div>
+            <div class="big-number">48%</div>
+            <h3>Clientes de valor</h3>
+            <p>Menos de la mitad de los clientes concentraban el 71% del beneficio total.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container split">
-        <div>
-          <div class="badge">Business Analytics</div>
+      <div class="container">
+        <div class="badge">Root Cause Analysis</div>
 
-          <h2 class="section-title">Data storytelling a traves de inteligencia analitica.</h2>
+        <h2 class="section-title">
+          El problema no estaba en la demanda. Estaba en la política de descuentos.
+        </h2>
 
-          <p>
-            El proyecto explora comportamiento operacional, tendencias de rentabilidad y dinamicas de
-            clientes para descubrir Strategic Insights ocultos en los datos transaccionales de retail.
-          </p>
+        <p class="section-sub">
+          El análisis identificó un comportamiento inelástico del mercado: los descuentos agresivos no
+          generaban incrementos significativos en volumen de ventas, pero sí destruían margen y
+          rentabilidad.
+        </p>
+
+        <div class="grid-2">
+          <div class="pricing-card loss">
+            <span>Pérdida Oculta Detectada</span>
+
+            <div class="pricing-value">$156K</div>
+
+            <p>Valor perdido debido a descuentos que no generaban crecimiento real en demanda.</p>
+          </div>
+
+          <div class="pricing-card profit">
+            <span>Impacto Potencial</span>
+
+            <div class="pricing-value">+62%</div>
+
+            <p>
+              Incremento estimado del beneficio neto reduciendo descuentos en 10 puntos porcentuales.
+            </p>
+          </div>
         </div>
 
-        <div class="feature-list">
-          <div class="feature">
-            <h4>Profitability Analysis</h4>
-            <p>
-              Identificacion de categorias de producto y regiones que impulsan el desempeno del
-              negocio.
-            </p>
+        <div class="quote">
+          <h3>"El negocio estaba creciendo en volumen, pero destruyendo valor."</h3>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="badge">Hallazgos Estratégicos</div>
+
+        <h2 class="section-title">
+          La analítica permitió detectar pérdidas invisibles en la operación comercial.
+        </h2>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Demand Inelasticity</h3>
+            <p>Los descuentos no generaban incremento proporcional en ventas.</p>
           </div>
 
-          <div class="feature">
-            <h4>Sales Intelligence</h4>
-            <p>
-              Executive KPIs que brindan visibilidad de revenue, orders y eficiencia operacional.
-            </p>
+          <div class="card">
+            <h3>Pricing Misalignment</h3>
+            <p>La estrategia comercial priorizaba revenue sobre rentabilidad.</p>
           </div>
 
-          <div class="feature">
-            <h4>Customer Insights</h4>
-            <p>
-              Segmentacion analitica para revelar patrones de compra y oportunidades de negocio.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h4>Visual Storytelling</h4>
-            <p>
-              Dashboards interactivos que transforman datos en narrativas estrategicas accionables.
-            </p>
+          <div class="card">
+            <h3>Margin Erosion</h3>
+            <p>Los picos de ventas coincidían con picos de pérdidas operacionales.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="impacto">
+    <section>
       <div class="container">
         <div class="badge">Business Impact</div>
 
-        <h2 class="section-title">Business Intelligence disenado para visibilidad estrategica.</h2>
+        <h2 class="section-title">Transformando crecimiento en crecimiento rentable.</h2>
+
+        <p class="section-sub">
+          El proyecto demuestra cómo Business Intelligence puede utilizarse no solo para visualizar
+          ventas, sino para optimizar decisiones comerciales y capturar valor real.
+        </p>
 
         <div class="impact-grid">
           <div class="impact">
-            <h2>&uarr;</h2>
-            <p>Visibilidad operacional</p>
+            <h2>&darr;</h2>
+            <p>Ventas con pérdida</p>
           </div>
 
           <div class="impact">
             <h2>&uarr;</h2>
-            <p>Profitability Insights</p>
+            <p>Margen neto</p>
           </div>
 
           <div class="impact">
             <h2>&uarr;</h2>
-            <p>Decision Support</p>
+            <p>Eficiencia comercial</p>
           </div>
 
           <div class="impact">
             <h2>&uarr;</h2>
-            <p>Entendimiento del negocio</p>
+            <p>Rentabilidad sostenible</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="badge">Strategic Recommendations</div>
+
+        <h2 class="section-title">Plan de acción basado en analítica.</h2>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Pricing Intelligence</h3>
+            <p>Implementar límites de descuento basados en margen y elasticidad de demanda.</p>
+          </div>
+
+          <div class="card">
+            <h3>Portfolio Optimization</h3>
+            <p>Priorizar productos y clientes con mayor contribución al beneficio.</p>
+          </div>
+
+          <div class="card">
+            <h3>Value-Based Strategy</h3>
+            <p>Reemplazar estrategias orientadas a volumen por decisiones orientadas a valor.</p>
+          </div>
+
+          <div class="card">
+            <h3>Profit Monitoring</h3>
+            <p>Monitorear rentabilidad y erosión de margen en tiempo real.</p>
           </div>
         </div>
       </div>
@@ -268,14 +295,18 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     <section id="galeria">
       <div class="container">
         <div class="badge">Dashboard Gallery</div>
-        <h2 class="section-title">Imagenes de dashboard del proyecto</h2>
+        <h2 class="section-title">Visualización del dashboard del proyecto</h2>
 
         {
           dashboardShots.length > 0 ? (
-            <div class="gallery-carousel" aria-label="Galeria de dashboards Superstore 360">
+            <div class="gallery-carousel" aria-label="Galería de dashboards Retail Decision Intelligence">
               {dashboardShots.map((img, index) => (
                 <figure class={`shot-slide${index === 0 ? ' is-active' : ''}`} data-slide={index}>
-                  <img src={withBase(img)} alt={`Dashboard Superstore 360 ${index + 1}`} loading="lazy" />
+                  <img
+                    src={withBase(img)}
+                    alt={`Dashboard Retail Decision Intelligence ${index + 1}`}
+                    loading="lazy"
+                  />
                 </figure>
               ))}
 
@@ -299,54 +330,25 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
             </div>
           ) : (
             <p class="gallery-empty">
-              Aun no hay imagenes cargadas. Agrega tus capturas en
+              Aún no hay imágenes cargadas. Agrega tus capturas en
               <strong> public/images/projects/superstore-360/</strong> con nombres como
               <strong> dashboard-1.jpg</strong>, <strong>dashboard-2.jpg</strong> o en formato PNG.
-              Tambien se aceptan archivos <strong>.jfif</strong> en
+              También se aceptan archivos <strong>.jfif</strong> en
               <strong> public/images/projects/</strong> con nombres como <strong>clientes</strong>,
-              <strong>desempeno</strong>, <strong>producto</strong> y <strong>ventas</strong>.
+              <strong>desempeño/desempeno</strong>, <strong>producto</strong> y <strong>ventas</strong>.
             </p>
           )
         }
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="badge">Technology Stack</div>
-
-        <h2 class="section-title">Tecnologias que impulsan el ecosistema analitico.</h2>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Data Analytics</h3>
-            <p>SQL, Python, Pandas y workflows analiticos orientados a negocio.</p>
-          </div>
-
-          <div class="card">
-            <h3>Business Intelligence</h3>
-            <p>Dashboards en Power BI disenados para monitoreo ejecutivo y analisis de KPIs.</p>
-          </div>
-
-          <div class="card">
-            <h3>Data Storytelling</h3>
-            <p>
-              Narrativas visuales que transforman datos de retail en insights estrategicos
-              accionables.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <footer>
       <div class="container">
-        <h2>Retail Intelligence.</h2>
+        <h2>Retail Decision Intelligence.</h2>
 
         <p>
-          Superstore 360 transforma datos transaccionales de retail en visibilidad estrategica,
-          ayudando a descubrir patrones operacionales y mejorar decisiones de negocio mediante
-          analytics.
+          El verdadero problema no era vender más. Era capturar valor mediante decisiones comerciales
+          inteligentes.
         </p>
 
         <div class="btn-group" style="justify-content:center;">
@@ -354,13 +356,13 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
             href="https://github.com/DouglasAdonCa"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-primary">Repositorio en GitHub</a
+            class="btn btn-primary">GitHub Repository</a
           >
           <a
             href="https://www.linkedin.com/in/douglas-adon-capellan-77a988103/"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-secondary">Proyecto en LinkedIn</a
+            class="btn btn-secondary">LinkedIn Project</a
           >
         </div>
       </div>
@@ -375,7 +377,7 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     box-sizing: border-box;
   }
 
-  .s360-page {
+  .rdi-page {
     font-family: Inter, Arial, sans-serif;
     background: #020617;
     color: #e2e8f0;
@@ -383,13 +385,16 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   }
 
   :root {
-    --primary: #8b5cf6;
+    --primary: #2563eb;
     --secondary: #0f172a;
     --card: #111827;
     --border: #1e293b;
     --text: #cbd5e1;
     --muted: #94a3b8;
-    --gradient: linear-gradient(135deg, #8b5cf6, #06b6d4);
+    --green: #10b981;
+    --red: #ef4444;
+    --orange: #f59e0b;
+    --gradient: linear-gradient(135deg, #2563eb, #06b6d4);
   }
 
   .container {
@@ -409,28 +414,29 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   }
 
   p {
-    color: var(--text);
     line-height: 1.8;
+    color: var(--text);
   }
 
   .back-link {
     display: inline-flex;
     margin-bottom: 24px;
-    color: #c4b5fd;
+    color: #93c5fd;
     text-decoration: none;
     font-size: 0.95rem;
   }
+
   .back-link:hover {
-    color: #e9d5ff;
+    color: #dbeafe;
   }
 
   .badge {
     display: inline-block;
     padding: 8px 18px;
     border-radius: 50px;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    color: var(--primary);
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    color: #60a5fa;
     font-size: 14px;
     margin-bottom: 24px;
     letter-spacing: 1px;
@@ -449,7 +455,7 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     position: absolute;
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.12), transparent 70%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12), transparent 70%);
     top: -250px;
     right: -180px;
   }
@@ -462,15 +468,15 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   }
 
   .hero h1 {
-    font-size: 80px;
+    font-size: 84px;
     font-weight: 800;
     margin-bottom: 30px;
-    max-width: 900px;
+    max-width: 920px;
   }
 
   .hero p {
     font-size: 20px;
-    max-width: 720px;
+    max-width: 760px;
     margin-bottom: 40px;
   }
 
@@ -518,8 +524,8 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   }
 
   .stat-card span {
-    font-size: 13px;
     color: var(--muted);
+    font-size: 13px;
     text-transform: uppercase;
   }
 
@@ -531,7 +537,7 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   .dashboard-card {
     background: rgba(15, 23, 42, 0.75);
     border: 1px solid var(--border);
-    border-radius: 28px;
+    border-radius: 30px;
     padding: 30px;
     backdrop-filter: blur(20px);
   }
@@ -539,29 +545,28 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   .dashboard-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
     color: #94a3b8;
+    margin-bottom: 24px;
     font-size: 14px;
   }
 
   .dashboard-box {
     background: #020617;
     border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 28px;
   }
 
   .dashboard-box h3 {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 16px;
   }
 
   .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .mini-box {
@@ -572,25 +577,31 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   }
 
   .mini-box span {
-    color: #94a3b8;
     font-size: 12px;
+    color: #94a3b8;
   }
 
   .mini-box h4 {
-    font-size: 30px;
+    font-size: 32px;
     margin-top: 10px;
   }
 
   .section-title {
-    font-size: 58px;
+    font-size: 60px;
     margin-bottom: 25px;
-    max-width: 950px;
+    max-width: 980px;
   }
 
   .section-sub {
-    max-width: 820px;
+    max-width: 850px;
     margin-bottom: 70px;
     font-size: 18px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .grid-3 {
@@ -608,8 +619,8 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   }
 
   .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(139, 92, 246, 0.4);
+    transform: translateY(-5px);
+    border-color: rgba(37, 99, 235, 0.4);
   }
 
   .card h3 {
@@ -617,56 +628,13 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     margin-bottom: 20px;
   }
 
-  .pipeline {
-    background: #0f172a;
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    padding: 60px;
-    margin-top: 50px;
-  }
-
-  .flow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .flow-box {
-    flex: 1;
-    min-width: 180px;
-    background: #020617;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-  }
-
-  .arrow {
-    color: var(--primary);
-    font-size: 32px;
-  }
-
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-
-  .feature-list {
-    margin-top: 40px;
-  }
-
-  .feature {
-    padding: 22px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .feature h4 {
-    font-size: 22px;
-    margin-bottom: 10px;
+  .big-number {
+    font-size: 72px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .impact-grid {
@@ -679,17 +647,76 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
   .impact {
     background: #0f172a;
     border: 1px solid var(--border);
-    border-radius: 22px;
-    padding: 30px;
+    border-radius: 24px;
+    padding: 35px;
     text-align: center;
   }
 
   .impact h2 {
-    font-size: 44px;
+    font-size: 52px;
     margin-bottom: 10px;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
+  }
+
+  .impact p {
+    color: var(--muted);
+  }
+
+  .pricing-card {
+    border-radius: 28px;
+    padding: 40px;
+  }
+
+  .loss {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  .profit {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  .pricing-card span {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .loss span {
+    color: var(--red);
+  }
+
+  .profit span {
+    color: var(--green);
+  }
+
+  .pricing-value {
+    font-size: 60px;
+    font-weight: 800;
+    margin: 20px 0;
+  }
+
+  .loss .pricing-value {
+    color: var(--red);
+  }
+
+  .profit .pricing-value {
+    color: var(--green);
+  }
+
+  .quote {
+    background: #0f172a;
+    border-left: 5px solid #2563eb;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 50px;
+  }
+
+  .quote h3 {
+    font-size: 36px;
+    line-height: 1.4;
   }
 
   .gallery-carousel {
@@ -706,16 +733,13 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     display: none;
     width: 100%;
     height: 100%;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
   }
 
   .shot-slide.is-active {
     display: block;
-  }
-
-  .shot-slide {
-    border: 0;
-    border-radius: 0;
-    margin: 0;
   }
 
   .shot-slide img {
@@ -730,9 +754,9 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    border: 1px solid rgba(139, 92, 246, 0.5);
+    border: 1px solid rgba(37, 99, 235, 0.5);
     background: rgba(2, 6, 23, 0.72);
-    color: #e9d5ff;
+    color: #dbeafe;
     width: 44px;
     height: 44px;
     border-radius: 999px;
@@ -742,13 +766,16 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     z-index: 3;
     transition: all 0.2s ease;
   }
+
   .gallery-nav:hover {
-    background: rgba(139, 92, 246, 0.18);
-    border-color: rgba(139, 92, 246, 0.9);
+    background: rgba(37, 99, 235, 0.18);
+    border-color: rgba(37, 99, 235, 0.9);
   }
+
   .gallery-nav.prev {
     left: 14px;
   }
+
   .gallery-nav.next {
     right: 14px;
   }
@@ -772,31 +799,17 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     cursor: pointer;
     transition: all 0.2s ease;
   }
+
   .gallery-dot.is-active {
     width: 24px;
-    background: #8b5cf6;
-  }
-
-  .shot-card {
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    background: #0b1220;
-  }
-
-  .shot-card img {
-    width: 100%;
-    height: 100%;
-    min-height: 190px;
-    object-fit: cover;
-    display: block;
+    background: #2563eb;
   }
 
   .gallery-empty {
-    border: 1px dashed rgba(139, 92, 246, 0.45);
+    border: 1px dashed rgba(37, 99, 235, 0.45);
     border-radius: 16px;
     padding: 24px;
-    background: rgba(139, 92, 246, 0.06);
+    background: rgba(37, 99, 235, 0.06);
     margin-top: 24px;
   }
 
@@ -820,14 +833,14 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
 
   @media (max-width: 1000px) {
     .hero-grid,
-    .split,
+    .grid-2,
     .grid-3,
     .impact-grid {
       grid-template-columns: 1fr;
     }
 
     .hero h1 {
-      font-size: 52px;
+      font-size: 56px;
     }
 
     .section-title {
@@ -836,14 +849,6 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
 
     .stats {
       grid-template-columns: 1fr;
-    }
-
-    .flow {
-      flex-direction: column;
-    }
-
-    .arrow {
-      transform: rotate(90deg);
     }
 
     .gallery-carousel {
@@ -889,10 +894,12 @@ const dashboardShots = localDashboardShots.length > 0 ? localDashboardShots : re
     paint(idx - 1);
     startAuto();
   });
+
   nextBtn?.addEventListener('click', () => {
     paint(idx + 1);
     startAuto();
   });
+
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       paint(i);

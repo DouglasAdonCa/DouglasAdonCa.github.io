@@ -1,34 +1,35 @@
 [
   {
-    "title": "Brand Identity & Visual System",
-    "category": "Branding",
-    "description": "A complete brand overhaul for a growing company — logo, typography, color system, and a style guide built to scale. Designed for flexibility without sacrificing cohesion.",
+    "title": "DecisionOS · Arquitectura Analítica",
+    "category": "IA & BI",
+    "description": "Vista de arquitectura y narrativa visual del proyecto DecisionOS para convertir datos transaccionales en decisiones accionables.",
     "images": [
-      "/images/portfolio/project-1a.jpg",
-      "/images/portfolio/project-1b.jpg",
-      "/images/portfolio/project-1c.jpg"
+      "/images/projects/use-astro.jpg",
+      "/images/projects/web-app.jpg",
+      "/images/projects/design-library.jpg"
     ],
-    "slides": ["Brand Overview", "Style Guide Spread", "Product Shot"]
+    "slides": ["Arquitectura", "Flujo de solución", "Componentes clave"]
   },
   {
-    "title": "Interactive Web Experience",
-    "category": "Web Design",
-    "description": "A custom-built site blending editorial layout with smooth scroll interactions and motion. Designed in Figma, built in code, and optimized down to the frame.",
+    "title": "Retail Decision Intelligence · Dashboards",
+    "category": "Retail BI",
+    "description": "Galería de tableros analíticos para evaluar clientes, productos y ventas dentro del caso Retail Decision Intelligence.",
     "images": [
-      "/images/portfolio/project-2a.jpg",
-      "/images/portfolio/project-2b.jpg",
-      "/images/portfolio/project-2c.jpg"
+      "/images/projects/clientes.jfif",
+      "/images/projects/producto.jfif",
+      "/images/projects/ventas.jfif"
     ],
-    "slides": ["Homepage Figma Design", "Homepage Complete", "Second Phase app page"]
+    "slides": ["Análisis de clientes", "Análisis de producto", "Análisis de ventas"]
   },
   {
-    "title": "Short Film & Motion Piece",
-    "category": "Video",
-    "description": "A two-minute visual essay combining original footage, 3D elements, and motion design. Shot, edited, and scored independently — start to finish in three weeks.",
+    "title": "Casos de IA Aplicada",
+    "category": "Project Gallery",
+    "description": "Colección visual de casos orientados a inteligencia de decisión, mantenimiento predictivo y control financiero corporativo.",
     "images": [
-      "/images/portfolio/project-3a.jpg",
-      "/images/portfolio/project-3b.jpg"
+      "/images/projects/design-library.jpg",
+      "/images/projects/use-astro.jpg",
+      "/images/projects/web-app.jpg"
     ],
-    "slides": ["Opening Scene", "Modeling Sequence", "Developing Music for Documentary"]
+    "slides": ["Caso 1", "Caso 2", "Caso 3"]
   }
 ]

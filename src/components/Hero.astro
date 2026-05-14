@@ -3,6 +3,8 @@ import personalData from '../data/personal.json';
 import projectsData from '../data/projects.json';
 import { augmentProjectsWithImages, type ProjectEntry } from '../lib/fetchGitHub';
 import { getSocialLinks } from '../lib/socialLinks';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 const heroSocialLinks = getSocialLinks(
   personalData as unknown as Record<string, string | string[]>,
@@ -22,6 +24,12 @@ const featuredProjects = augmented
   }));
 // Split "Frontend & Backend" so the "&" can be styled with a different colour in the template.
 const heroParts = personalData.heroRole.split(' & ');
+
+const cvValue = (personalData.cv ?? '').trim();
+const isExternalCv = /^https?:\/\//i.test(cvValue);
+const hasLocalCv =
+  cvValue.startsWith('/') && existsSync(join(process.cwd(), 'public', cvValue.replace(/^\//, '')));
+const hasCv = Boolean(cvValue) && (isExternalCv || hasLocalCv);
 ---
 
 <section id="home" class="relative min-h-screen overflow-hidden flex items-center">
@@ -88,12 +96,12 @@ const heroParts = personalData.heroRole.split(' & ');
 
         <div class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 0.3s;">
           <a href="#contact" class="btn-primary text-center">Hablemos</a>
-          {personalData.cv ? (
+          {hasCv ? (
             <a
-              href={personalData.cv}
+              href={cvValue}
               target="_blank"
               rel="noopener noreferrer"
-              class="btn-secondary text-center">Descargar CV</a>
+              class="btn-secondary text-center">Ver CV Diseñado</a>
           ) : (
             <button onclick="window.print()" class="btn-secondary text-center">Imprimir CV</button>
           )}

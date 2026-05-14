@@ -17,9 +17,9 @@
       "Forecasting"
     ],
     "icon": "sparkles",
-    "sliderImage": "/images/projects/default-bg.jpg",
+    "sliderImage": "/images/projects/web-app.jpg",
     "sliderOrder": 1,
-    "backgroundImage": "/images/projects/default-bg.jpg",
+    "backgroundImage": "/images/projects/web-app.jpg",
     "link": "/projects/decisionos",
     "colorIcon": "/images/icons/materialdesign/brain.svg",
     "githubRepo": ""
@@ -53,9 +53,9 @@
     "title": "Inteligencia de Gastos Corporativos",
     "featured": true,
     "resume": true,
-    "company": "Proyecto de auditoria financiera con AI",
+    "company": "Proyecto de auditoría financiera con AI",
     "category": "IA & BI",
-    "description": "Plataforma inteligente de auditoria de gastos corporativos para detectar anomalias, mejorar la visibilidad financiera y fortalecer el control operacional con Analytics y AI.",
+    "description": "Plataforma inteligente de auditoría de gastos corporativos para detectar anomalías, mejorar la visibilidad financiera y fortalecer el control operacional con Analytics y AI.",
     "tags": [
       "AI Audit",
       "Corporate Analytics",
@@ -75,12 +75,12 @@
     "githubRepo": ""
   },
   {
-    "title": "Superstore 360",
+    "title": "Retail Decision Intelligence",
     "featured": true,
     "resume": true,
     "company": "Proyecto BI para retail",
     "category": "IA & BI",
-    "description": "Solucion end-to-end de Business Intelligence para retail enfocada en KPI Analytics, Data Storytelling y Decision Support a nivel ejecutivo.",
+    "description": "Proyecto de Retail Decision Intelligence enfocado en detectar pérdidas ocultas, optimizar estrategia comercial y convertir crecimiento en rentabilidad sostenible.",
     "tags": [
       "Business Intelligence",
       "Retail Analytics",
