@@ -73,7 +73,7 @@ const socialLinks = getSocialLinks(personalData as unknown as Record<string, str
                     </svg>
                   </div>
                   <div>
-                    <h3 class="text-white font-semibold text-sm">TelÃ©fono</h3>
+                    <h3 class="text-white font-semibold text-sm">Teléfono</h3>
                     <a
                       href={personalData.phoneTel}
                       class="text-slate-400 text-sm hover:text-accent transition-colors"
@@ -111,7 +111,7 @@ const socialLinks = getSocialLinks(personalData as unknown as Record<string, str
                 </svg>
               </div>
               <div>
-                <h3 class="text-white font-semibold text-sm">UbicaciÃ³n</h3>
+                <h3 class="text-white font-semibold text-sm">Ubicación</h3>
                 <p class="text-slate-400 text-sm">{personalData.location}</p>
               </div>
             </div>
@@ -120,7 +120,7 @@ const socialLinks = getSocialLinks(personalData as unknown as Record<string, str
           {
             socialLinks.length > 0 && (
               <div class="card">
-                <h3 class="text-white font-semibold text-sm mb-4">TambiÃ©n puedes encontrarme en:</h3>
+                <h3 class="text-white font-semibold text-sm mb-4">También puedes encontrarme en:</h3>
                 <div class="flex flex-wrap gap-4">
                   {socialLinks.map((link) => (
                     <a
@@ -289,13 +289,13 @@ const socialLinks = getSocialLinks(personalData as unknown as Record<string, str
       });
       const data = (await res.json()) as { success?: boolean; message?: string };
       if (res.ok) {
-        setStatus('Mensaje enviado. Te responderÃ© pronto.', false);
+        setStatus('Mensaje enviado. Te responderé pronto.', false);
         form!.reset();
       } else {
-        setStatus(data.message ?? 'Algo saliÃ³ mal. IntÃ©ntalo nuevamente.', true);
+        setStatus(data.message ?? 'Algo salió mal. Inténtalo nuevamente.', true);
       }
     } catch {
-      setStatus('Error de red. Revisa tu conexiÃ³n e intÃ©ntalo nuevamente.', true);
+      setStatus('Error de red. Revisa tu conexión e inténtalo nuevamente.', true);
     } finally {
       if (button) {
         button.disabled = false;
