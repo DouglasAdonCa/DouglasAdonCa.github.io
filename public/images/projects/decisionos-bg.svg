@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1460" y2="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.5" stop-color="#131C3A"/>
+      <stop offset="1" stop-color="#0A1F2E"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(430 260) rotate(40) scale(520 320)">
+      <stop stop-color="#3B82F6" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 640) rotate(-18) scale(520 280)">
+      <stop stop-color="#14B8A6" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#14B8A6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="240" y1="120" x2="1360" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA" stop-opacity="0.66"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0.56"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glowA)"/>
+  <rect width="1600" height="900" fill="url(#glowB)"/>
+
+  <g opacity="0.2" stroke="#334155" stroke-width="1">
+    <path d="M0 110H1600"/>
+    <path d="M0 230H1600"/>
+    <path d="M0 350H1600"/>
+    <path d="M0 470H1600"/>
+    <path d="M0 590H1600"/>
+    <path d="M0 710H1600"/>
+    <path d="M0 830H1600"/>
+    <path d="M180 0V900"/>
+    <path d="M360 0V900"/>
+    <path d="M540 0V900"/>
+    <path d="M720 0V900"/>
+    <path d="M900 0V900"/>
+    <path d="M1080 0V900"/>
+    <path d="M1260 0V900"/>
+    <path d="M1440 0V900"/>
+  </g>
+
+  <g stroke="url(#line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M210 680L420 520L620 580L790 420L1020 480L1230 320L1410 370"/>
+    <path d="M250 260L430 340L640 260L830 310L1030 250L1220 290L1390 220" opacity="0.8"/>
+    <path d="M220 470L390 430L560 500L740 470L910 540L1100 500L1280 560" opacity="0.6"/>
+  </g>
+
+  <g fill="#93C5FD">
+    <circle cx="210" cy="680" r="7"/>
+    <circle cx="420" cy="520" r="7"/>
+    <circle cx="620" cy="580" r="7"/>
+    <circle cx="790" cy="420" r="7"/>
+    <circle cx="1020" cy="480" r="7"/>
+    <circle cx="1230" cy="320" r="7"/>
+    <circle cx="1410" cy="370" r="7"/>
+  </g>
+
+  <g fill="#2DD4BF">
+    <circle cx="250" cy="260" r="6"/>
+    <circle cx="430" cy="340" r="6"/>
+    <circle cx="640" cy="260" r="6"/>
+    <circle cx="830" cy="310" r="6"/>
+    <circle cx="1030" cy="250" r="6"/>
+    <circle cx="1220" cy="290" r="6"/>
+    <circle cx="1390" cy="220" r="6"/>
+  </g>
+
+  <g filter="url(#soft)">
+    <circle cx="790" cy="420" r="42" fill="#3B82F6" fill-opacity="0.34"/>
+    <circle cx="1230" cy="320" r="36" fill="#14B8A6" fill-opacity="0.30"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" fill="#E2E8F0">
+    <text x="180" y="140" font-size="64" font-weight="800" letter-spacing="1">DecisionOS</text>
+    <text x="182" y="190" font-size="22" font-weight="500" fill="#A5B4FC">Decision Intelligence Platform</text>
+    <text x="182" y="232" font-size="18" font-weight="400" fill="#94A3B8">Data Lake · BI · ML · LLM Orchestration</text>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" fill="#CBD5E1" font-size="15" font-weight="600" opacity="0.85">
+    <text x="210" y="640">Ingesta transaccional</text>
+    <text x="390" y="485">Modelo dimensional</text>
+    <text x="590" y="545">Feature store</text>
+    <text x="760" y="385">Agentes analíticos</text>
+    <text x="980" y="445">Inferencia ML</text>
+    <text x="1190" y="287">Narrativa ejecutiva</text>
+  </g>
+</svg>

@@ -4,7 +4,8 @@ import projectsData from '../data/projects.json';
 import { augmentProjectsWithImages, type ProjectEntry } from '../lib/fetchGitHub';
 import { getSocialLinks } from '../lib/socialLinks';
 import { existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { readdirSync } from 'node:fs';
+import { extname, join } from 'node:path';
 
 const heroSocialLinks = getSocialLinks(
   personalData as unknown as Record<string, string | string[]>,
@@ -29,7 +30,21 @@ const cvValue = (personalData.cv ?? '').trim();
 const isExternalCv = /^https?:\/\//i.test(cvValue);
 const hasLocalCv =
   cvValue.startsWith('/') && existsSync(join(process.cwd(), 'public', cvValue.replace(/^\//, '')));
-const hasCv = Boolean(cvValue) && (isExternalCv || hasLocalCv);
+
+let discoveredCv = '';
+const cvPublicDir = join(process.cwd(), 'public', 'cv');
+if (existsSync(cvPublicDir)) {
+  const allowedCvExt = new Set(['.pdf', '.doc', '.docx']);
+  const candidates = readdirSync(cvPublicDir)
+    .filter((file) => allowedCvExt.has(extname(file).toLowerCase()))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+  if (candidates.length > 0) {
+    discoveredCv = `/cv/${candidates[0]}`;
+  }
+}
+
+const cvHref = isExternalCv ? cvValue : hasLocalCv ? cvValue : discoveredCv;
+const hasCv = Boolean(cvHref);
 ---
 
 <section id="home" class="relative min-h-screen overflow-hidden flex items-center">
@@ -98,7 +113,7 @@ const hasCv = Boolean(cvValue) && (isExternalCv || hasLocalCv);
           <a href="#contact" class="btn-primary text-center">Hablemos</a>
           {hasCv ? (
             <a
-              href={cvValue}
+              href={cvHref}
               target="_blank"
               rel="noopener noreferrer"
               class="btn-secondary text-center">Ver CV Diseñado</a>

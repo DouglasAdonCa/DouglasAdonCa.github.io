@@ -17,9 +17,9 @@
       "Forecasting"
     ],
     "icon": "sparkles",
-    "sliderImage": "/images/projects/web-app.jpg",
+    "sliderImage": "/images/projects/decisionos-bg.svg",
     "sliderOrder": 1,
-    "backgroundImage": "/images/projects/web-app.jpg",
+    "backgroundImage": "/images/projects/decisionos-bg.svg",
     "link": "/projects/decisionos",
     "colorIcon": "/images/icons/materialdesign/brain.svg",
     "githubRepo": ""
