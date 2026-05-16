@@ -189,7 +189,7 @@ const description =
           </p>
         </div>
 
-        <div class="storyline" aria-label="Etapas de transformacion de datos a decisiones">
+        <div class="storyline app-storyline" aria-label="Etapas de visualizacion de la app DecisionOS">
           <article class="story-step">
             <span class="story-index">01</span>
             <h3>Vista ejecutiva del negocio</h3>
@@ -200,26 +200,12 @@ const description =
             <h3>Forecasting con ML</h3>
             <p>Proyecciones de ingresos, churn y ordenes para decisiones anticipadas.</p>
           </article>
-          <article class="story-step">
-            <span class="story-index">03</span>
-            <h3>Ask the Business</h3>
-            <p>Preguntas en lenguaje natural que aterrizan en evidencia analitica real.</p>
-          </article>
-          <article class="story-step">
-            <span class="story-index">04</span>
-            <h3>Modelo de relaciones</h3>
-            <p>Mapeo de entidades Olist para trazabilidad de cada insight y metrica.</p>
-          </article>
-          <article class="story-step">
-            <span class="story-index">05</span>
-            <h3>Modelo estrella BI</h3>
-            <p>Dimensiones y hechos en Power BI para analisis consistente y escalable.</p>
-          </article>
         </div>
 
-        <div class="system-gallery" aria-label="Capturas de DecisionOS y arquitectura analitica">
+        <div class="system-gallery app-gallery" aria-label="Capturas de la aplicacion DecisionOS">
           <figure class="system-card wide">
             <img
+              class="app-shot"
               src="/images/projects/decisionos/Executive%20Overview.png"
               alt="DecisionOS AI Commerce Intelligence Center con KPIs ejecutivos y recomendaciones"
               loading="lazy"
@@ -233,6 +219,7 @@ const description =
 
           <figure class="system-card wide">
             <img
+              class="app-shot"
               src="/images/projects/decisionos/AI%20Forecasting.png"
               alt="Modulo AI Forecasting con proyecciones de revenue, churn y ordenes"
               loading="lazy"
@@ -244,44 +231,6 @@ const description =
             </figcaption>
           </figure>
 
-          <figure class="system-card">
-            <img
-              src="/images/projects/decisionos/ask.png"
-              alt="Bloque Ask the Business con consultas en lenguaje natural y resultados recientes"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>
-              <strong>Ask the Business</strong>
-              <span>Interfaz conversacional conectada a SQL, features y modelos.</span>
-            </figcaption>
-          </figure>
-
-          <figure class="system-card">
-            <img
-              src="/images/projects/decisionos/database_transacional_olist.png"
-              alt="Diagrama de relaciones del dataset Olist entre ordenes, clientes, productos y sellers"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>
-              <strong>Relacion transaccional Olist</strong>
-              <span>Base estructural para transformar eventos en conocimiento utilizable.</span>
-            </figcaption>
-          </figure>
-
-          <figure class="system-card full">
-            <img
-              src="/images/projects/decisionos/database-estrella.png"
-              alt="Modelo estrella en Power BI con tablas de hechos y dimensiones conectadas"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>
-              <strong>Modelo estrella para Decision Intelligence</strong>
-              <span>Del dato operativo a un lenguaje comun de negocio para priorizar decisiones.</span>
-            </figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -793,6 +742,9 @@ const description =
     gap: 0.7rem;
     margin-bottom: 1rem;
   }
+  .app-storyline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .story-step {
     border: 1px solid var(--line);
     background: rgba(2, 6, 23, 0.35);
@@ -822,6 +774,9 @@ const description =
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.9rem;
   }
+  .app-gallery {
+    grid-template-columns: 1fr;
+  }
   .system-card {
     border: 1px solid var(--line);
     border-radius: 1rem;
@@ -841,6 +796,12 @@ const description =
     object-fit: cover;
     object-position: center;
     display: block;
+  }
+  .system-card img.app-shot {
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    background: #0b1324;
   }
   .system-card figcaption {
     display: grid;
