@@ -4,11 +4,17 @@
     "category": "IA & BI",
     "description": "Vista de arquitectura y narrativa visual del proyecto DecisionOS para convertir datos transaccionales en decisiones accionables.",
     "images": [
-      "/images/projects/decisionos/ask.png",
+      "/images/projects/decisionos/Executive%20Overview.png",
+      "/images/projects/decisionos/database-estrella.png",
       "/images/projects/decisionos/database_transacional_olist.png",
-      "/images/projects/decisionos/database-estrella.png"
+      "/images/projects/decisionos/ask.png"
     ],
-    "slides": ["Ask the Business", "Modelo transaccional Olist", "Modelo estrella en Power BI"]
+    "slides": [
+      "Executive Overview",
+      "Modelo estrella en Power BI",
+      "Modelo transaccional Olist",
+      "Ask the Business"
+    ]
   },
   {
     "title": "Retail Decision Intelligence · Dashboards",
