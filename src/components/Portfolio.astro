@@ -4,6 +4,10 @@ import { withBase } from '../lib/assetPath';
 
 const categories = ['Todos', ...Array.from(new Set(portfolioData.map((p) => p.category)))];
 
+const categoryLabels: Record<string, string> = {
+  'IA & BI': 'IA & BI para PYMES',
+};
+
 const categoryColors: Record<string, string> = {
   'IA & BI': '#2563eb',
   'Retail BI': '#10b981',
@@ -31,8 +35,8 @@ const portfolioDataForClient = portfolioData.map((p) => ({
         Mi portafolio
       </p>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Portafolio</h2>
-      <p class="mt-4 text-base max-w-xl mx-auto" style="color: var(--text-muted);">
-        Soluciones, casos y trabajos aplicados en distintos contextos de negocio.
+      <p class="mt-4 text-base max-w-2xl mx-auto" style="color: var(--text-muted);">
+        Casos reales de automatizacion, IA y BI disenados para crear impacto operativo en PYMES.
       </p>
     </div>
 
@@ -46,7 +50,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
               cat !== 'Todos' && cat in categoryColors ? `--cat-color: ${categoryColors[cat]}` : ''
             }
           >
-            {cat}
+            {categoryLabels[cat] ?? cat}
             <span class="pf-filter-count">
               {cat === 'Todos'
                 ? portfolioData.length
@@ -110,7 +114,7 @@ const portfolioDataForClient = portfolioData.map((p) => ({
                   </div>
                 </div>
               </div>
-              <span class="portfolio-badge">{project.category}</span>
+              <span class="portfolio-badge">{categoryLabels[project.category] ?? project.category}</span>
             </div>
             <div class="portfolio-footer">
               <span class="portfolio-title">{project.title}</span>

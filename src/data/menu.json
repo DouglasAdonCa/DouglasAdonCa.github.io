@@ -22,14 +22,14 @@
       "label": "Portafolio",
       "shortLabel": "Portafolio",
       "href": "#portfolio",
-      "desc": "Casos, soluciones y trabajo aplicado"
+      "desc": "Casos aplicados de automatizacion, IA y BI"
     },
     {
       "label": "Proyectos",
       "shortLabel": "Proyectos",
       "href": "#projects",
-      "desc": "Proyectos técnicos y experimentos"
-    },
+      "desc": "Sistemas inteligentes orientados a resultados en PYMES"
+    }
     {
       "label": "Certificaciones",
       "shortLabel": "Certs",
