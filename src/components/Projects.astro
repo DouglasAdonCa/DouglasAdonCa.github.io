@@ -17,10 +17,16 @@ import { icons } from '../lib/icons';
 
 // Filter values must match the `category` field used in projects.json entries.
 const projectCategories = Array.from(new Set(projectsData.map((project) => project.category)));
+const categoryLabels: Record<string, string> = {
+  'IA & BI': 'IA & BI para PYMES',
+};
 const filters = [
-  { label: 'Destacados', value: 'featured' },
-  { label: 'Todos', value: 'all' },
-  ...projectCategories.map((category) => ({ label: category, value: category })),
+  { label: 'Destacados de impacto', value: 'featured' },
+  { label: 'Todos los casos', value: 'all' },
+  ...projectCategories.map((category) => ({
+    label: categoryLabels[category] ?? category,
+    value: category,
+  })),
 ];
 
 const projectsJson = JSON.stringify(
@@ -39,6 +45,9 @@ const projectsJson = JSON.stringify(
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">
         Proyectos destacados
       </h2>
+      <p class="mt-4 text-base max-w-2xl mx-auto" style="color: var(--text-muted);">
+        Casos aplicados de IA, automatizacion y BI orientados a resultados reales para PYMES.
+      </p>
     </div>
 
     <div class="flex flex-wrap justify-center gap-2 mb-10 reveal" style="transition-delay:0.1s;">
@@ -153,7 +162,7 @@ const projectsJson = JSON.stringify(
                   </div>
                 )}
                 <span class="view-hint">
-                  <span class="view-hint-text">Ver enlace del proyecto</span>
+                  <span class="view-hint-text">Ver caso completo</span>
                   <svg
                     class="view-hint-arrow"
                     fill="none"
@@ -176,7 +185,7 @@ const projectsJson = JSON.stringify(
     </div>
 
     <p id="projects-empty" class="hidden text-center text-slate-600 text-sm mt-12">
-      Aún no hay proyectos en esta categoría.
+      Aun no hay casos en este filtro.
     </p>
   </div>
 </section>
